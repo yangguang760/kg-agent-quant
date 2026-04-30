@@ -32,6 +32,10 @@ The key innovation is **separated Generator-Scorer architecture** and **three qu
 
 ### Architecture
 
+<p align="center">
+  <img src="docs/fig1.jpg" alt="KG-AgentQuant Architecture" width="800"/>
+</p>
+
 ```
 Topics → Entity Expansion → Relation Construction → Hypothesis Generation → Expression Instantiation
               ↓                    ↓                      ↓                      ↓
