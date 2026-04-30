@@ -1,0 +1,23 @@
+# LLM Configuration for KG-AgentQuant
+# Copy this file as a template and add your API keys
+
+yunnetC:
+  api_base: "https://api.yunnet.top/v1"
+  api_key: "YOUR_API_KEY_HERE"
+  model: "gpt-5.3-codex"
+  temperature: 0.5
+  max_tokens: 4096
+
+yunnet:
+  api_base: "https://api.yunnet.top/v1"
+  api_key: "YOUR_API_KEY_HERE"
+  model: "claude-opus-4-6"
+  temperature: 0.7
+  max_tokens: 4096
+
+aifast:
+  api_base: "https://aifast.site/v1"
+  api_key: "YOUR_API_KEY_HERE"
+  model: "gpt-5.3-codex"
+  temperature: 0.5
+  max_tokens: 4096

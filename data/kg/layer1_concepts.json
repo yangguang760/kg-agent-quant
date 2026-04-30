@@ -1,0 +1,941 @@
+{
+  "topics": [
+    {
+      "topic": "财务指标",
+      "entity_type": "FinancialIndicator",
+      "concepts": [
+        {
+          "name": "ROE",
+          "full_name": "净资产收益率",
+          "definition": "净利润与平均净资产的比率",
+          "formula": "净利润 / 平均净资产",
+          "unit": "%",
+          "meaning": "衡量公司使用股东资金创造利润的能力，反映股东权益的收益水平",
+          "category": "盈利能力指标"
+        },
+        {
+          "name": "ROA",
+          "full_name": "总资产收益率",
+          "definition": "净利润与平均总资产的比率",
+          "formula": "净利润 / 平均总资产",
+          "unit": "%",
+          "meaning": "衡量公司利用全部资产获取利润的能力，反映资产利用效率",
+          "category": "盈利能力指标"
+        },
+        {
+          "name": "Gross Margin",
+          "full_name": "销售毛利率",
+          "definition": "毛利与营业收入的比率",
+          "formula": "(营业收入 - 营业成本) / 营业收入",
+          "unit": "%",
+          "meaning": "衡量产品本身的盈利能力，反映扣除直接成本后的利润空间",
+          "category": "盈利能力指标"
+        },
+        {
+          "name": "Net Margin",
+          "full_name": "销售净利率",
+          "definition": "净利润与营业收入的比率",
+          "formula": "净利润 / 营业收入",
+          "unit": "%",
+          "meaning": "衡量公司最终获利能力，反映每一元销售收入带来的净利润",
+          "category": "盈利能力指标"
+        },
+        {
+          "name": "PE",
+          "full_name": "市盈率",
+          "definition": "股票价格与每股收益的比率",
+          "formula": "股价 / 每股收益 (EPS)",
+          "unit": "倍",
+          "meaning": "衡量投资回收期，反映市场对公司未来盈利增长的预期",
+          "category": "估值指标"
+        },
+        {
+          "name": "PB",
+          "full_name": "市净率",
+          "definition": "股票价格与每股净资产的比率",
+          "formula": "股价 / 每股净资产",
+          "unit": "倍",
+          "meaning": "衡量股价相对于账面价值的倍数，适用于重资产行业估值",
+          "category": "估值指标"
+        },
+        {
+          "name": "PS",
+          "full_name": "市销率",
+          "definition": "股票价格与每股销售收入的比率",
+          "formula": "市值 / 营业收入",
+          "unit": "倍",
+          "meaning": "衡量股价相对于销售收入的倍数，适用于尚未盈利的高成长公司",
+          "category": "估值指标"
+        },
+        {
+          "name": "PC",
+          "full_name": "市现率",
+          "definition": "股票价格与每股现金流的比率",
+          "formula": "股价 / 每股经营现金流",
+          "unit": "倍",
+          "meaning": "衡量股价相对于现金流的倍数，反映公司现金流创造能力的估值",
+          "category": "估值指标"
+        },
+        {
+          "name": "Revenue Growth",
+          "full_name": "营业收入增长率",
+          "definition": "本期营业收入增长额与上期营业收入的比率",
+          "formula": "(本期营收 - 上期营收) / 上期营收",
+          "unit": "%",
+          "meaning": "衡量公司业务规模的扩张速度，反映市场占有率的变化",
+          "category": "成长能力指标"
+        },
+        {
+          "name": "Net Profit Growth",
+          "full_name": "净利润增长率",
+          "definition": "本期净利润增长额与上期净利润的比率",
+          "formula": "(本期净利 - 上期净利) / 上期净利",
+          "unit": "%",
+          "meaning": "衡量公司盈利能力的增长速度，反映成长性的核心指标",
+          "category": "成长能力指标"
+        },
+        {
+          "name": "Total Asset Turnover",
+          "full_name": "总资产周转率",
+          "definition": "营业收入与平均总资产的比率",
+          "formula": "营业收入 / 平均总资产",
+          "unit": "次",
+          "meaning": "衡量公司全部资产的使用效率，反映资产周转速度",
+          "category": "营运能力指标"
+        },
+        {
+          "name": "Inventory Turnover",
+          "full_name": "存货周转率",
+          "definition": "营业成本与平均存货的比率",
+          "formula": "营业成本 / 平均存货",
+          "unit": "次",
+          "meaning": "衡量存货变现速度，反映销售能力和存货管理水平",
+          "category": "营运能力指标"
+        },
+        {
+          "name": "Receivables Turnover",
+          "full_name": "应收账款周转率",
+          "definition": "营业收入与平均应收账款的比率",
+          "formula": "营业收入 / 平均应收账款",
+          "unit": "次",
+          "meaning": "衡量应收账款回收速度，反映资金占用情况和信用政策",
+          "category": "营运能力指标"
+        },
+        {
+          "name": "Debt-to-Asset",
+          "full_name": "资产负债率",
+          "definition": "总负债与总资产的比率",
+          "formula": "总负债 / 总资产",
+          "unit": "%",
+          "meaning": "衡量公司财务杠杆水平和长期偿债能力，反映财务风险",
+          "category": "偿债能力指标"
+        },
+        {
+          "name": "Current Ratio",
+          "full_name": "流动比率",
+          "definition": "流动资产与流动负债的比率",
+          "formula": "流动资产 / 流动负债",
+          "unit": "倍",
+          "meaning": "衡量公司短期偿债能力，反映每一元流动负债有多少流动资产作为保障",
+          "category": "偿债能力指标"
+        },
+        {
+          "name": "Quick Ratio",
+          "full_name": "速动比率",
+          "definition": "速动资产与流动负债的比率",
+          "formula": "(流动资产 - 存货) / 流动负债",
+          "unit": "倍",
+          "meaning": "衡量公司立即偿还短期债务的能力，比流动比率更严格",
+          "category": "偿债能力指标"
+        },
+        {
+          "name": "Interest Coverage",
+          "full_name": "利息保障倍数",
+          "definition": "息税前利润与利息费用的比率",
+          "formula": "息税前利润 (EBIT) / 利息费用",
+          "unit": "倍",
+          "meaning": "衡量公司支付利息的能力，反映长期偿债安全性",
+          "category": "偿债能力指标"
+        },
+        {
+          "name": "Dividend Yield",
+          "full_name": "股息率",
+          "definition": "每股股息与股票价格的比率",
+          "formula": "每股股息 / 股价",
+          "unit": "%",
+          "meaning": "衡量投资回报中的现金分红部分，反映公司的分红意愿和能力",
+          "category": "其他重要指标"
+        },
+        {
+          "name": "PEG",
+          "full_name": "市盈率相对盈利增长比率",
+          "definition": "市盈率与净利润增长率的比率",
+          "formula": "市盈率 (PE) / 净利润增长率",
+          "unit": "倍",
+          "meaning": "衡量估值与成长性的匹配度，用于判断高成长公司估值是否合理",
+          "category": "其他重要指标"
+        }
+      ],
+      "valid_count": 19,
+      "invalid_count": 0
+    },
+    {
+      "topic": "经济理论",
+      "entity_type": "EconomicTheory",
+      "concepts": [
+        {
+          "name": "价值投资",
+          "english_name": "Value Investing",
+          "core_view": "投资于内在价值被市场低估的股票，长期持有等待价值回归",
+          "proponent": "本杰明·格雷厄姆，沃伦·巴菲特",
+          "era": "1930s",
+          "constraints": "需要准确评估内在价值，可能存在价值陷阱，回报周期长",
+          "supported_factors": [
+            "低 PE 因子",
+            "低 PB 因子",
+            "高股息因子",
+            "低 PEG 因子"
+          ]
+        },
+        {
+          "name": "成长投资",
+          "english_name": "Growth Investing",
+          "core_view": "投资于具有高增长潜力的公司，关注未来收益增长而非当前价值",
+          "proponent": "菲利普·费雪，彼得·林奇",
+          "era": "1950s",
+          "constraints": "估值通常较高，对增长可持续性依赖大，风险较高",
+          "supported_factors": [
+            "高 EPS 增长因子",
+            "高营收增长因子",
+            "动量因子"
+          ]
+        },
+        {
+          "name": "现代投资组合理论",
+          "english_name": "Modern Portfolio Theory",
+          "core_view": "通过多元化配置资产，可以在不降低预期收益的情况下降低风险",
+          "proponent": "哈里·马科维茨",
+          "era": "1952",
+          "constraints": "假设投资者理性且风险厌恶，资产收益服从正态分布",
+          "supported_factors": [
+            "波动率因子",
+            "相关性因子",
+            "夏普比率"
+          ]
+        },
+        {
+          "name": "资本资产定价模型",
+          "english_name": "Capital Asset Pricing Model",
+          "core_view": "资产的预期收益率取决于其系统性风险（Beta），非系统性风险可获得分散",
+          "proponent": "威廉·夏普，约翰·林特纳",
+          "era": "1960s",
+          "constraints": "单因子模型，假设市场组合已知，现实中 Beta 不稳定",
+          "supported_factors": [
+            "Beta 因子",
+            "市场风险溢价"
+          ]
+        },
+        {
+          "name": "套利定价理论",
+          "english_name": "Arbitrage Pricing Theory",
+          "core_view": "资产收益率由多个宏观经济因子线性驱动，存在套利机会",
+          "proponent": "斯蒂芬·罗斯",
+          "era": "1976",
+          "constraints": "未明确具体因子有哪些，因子识别困难",
+          "supported_factors": [
+            "通胀因子",
+            "GDP 增长因子",
+            "利率因子",
+            "汇率因子"
+          ]
+        },
+        {
+          "name": "法玛 - 弗伦奇三因子模型",
+          "english_name": "Fama-French Three-Factor Model",
+          "core_view": "市场风险、规模因子和价值因子共同解释股票超额收益",
+          "proponent": "尤金·法玛，肯尼斯·弗伦奇",
+          "era": "1992",
+          "constraints": "未完全解释动量效应，因子定义随市场变化",
+          "supported_factors": [
+            "SMB 因子",
+            "HML 因子",
+            "市场因子"
+          ]
+        },
+        {
+          "name": "有效市场假说",
+          "english_name": "Efficient Market Hypothesis",
+          "core_view": "资产价格已充分反映所有可用信息，无法持续获得超额收益",
+          "proponent": "尤金·法玛",
+          "era": "1970",
+          "constraints": "存在市场异象，忽略行为金融偏差，信息不对称普遍存在",
+          "supported_factors": []
+        },
+        {
+          "name": "随机游走理论",
+          "english_name": "Random Walk Theory",
+          "core_view": "股价变动是独立且随机的，历史价格无法预测未来走势",
+          "proponent": "伯顿·马尔基尔",
+          "era": "1973",
+          "constraints": "忽略市场趋势和基本面变化，难以解释泡沫和崩盘",
+          "supported_factors": []
+        },
+        {
+          "name": "前景理论",
+          "english_name": "Prospect Theory",
+          "core_view": "投资者对损失比对收益更敏感，决策基于参考点而非最终财富",
+          "proponent": "丹尼尔·卡尼曼，阿莫斯·特沃斯基",
+          "era": "1979",
+          "constraints": "描述性理论而非规范性理论，个体差异大",
+          "supported_factors": [
+            "损失厌恶因子",
+            "参考点依赖"
+          ]
+        },
+        {
+          "name": "过度自信理论",
+          "english_name": "Overconfidence Theory",
+          "core_view": "投资者高估自己的知识能力和信息准确性，导致过度交易",
+          "proponent": "特伦斯·奥丁，布拉德·巴伯",
+          "era": "1990s",
+          "constraints": "难以量化自信程度，市场反馈可能修正自信",
+          "supported_factors": [
+            "高换手率因子",
+            "波动率因子"
+          ]
+        },
+        {
+          "name": "羊群效应",
+          "english_name": "Herding Effect",
+          "core_view": "投资者倾向于模仿他人行为而非独立分析，导致市场趋同",
+          "proponent": "多种行为金融学者",
+          "era": "1990s",
+          "constraints": "难以区分理性模仿与非理性羊群，数据识别困难",
+          "supported_factors": [
+            "动量因子",
+            "成交量因子",
+            "市场情绪因子"
+          ]
+        },
+        {
+          "name": "金融不稳定假说",
+          "english_name": "Financial Instability Hypothesis",
+          "core_view": "经济稳定时期会滋生过度投机和债务，最终导致金融危机",
+          "proponent": "海曼·明斯基",
+          "era": "1980s",
+          "constraints": "难以预测危机爆发的具体时点，政策干预可延缓",
+          "supported_factors": [
+            "杠杆率因子",
+            "信贷周期因子",
+            "债务偿债比"
+          ]
+        },
+        {
+          "name": "布莱克 - 舒尔斯模型",
+          "english_name": "Black-Scholes Model",
+          "core_view": "基于无套利原则，通过波动率等参数为期权定价",
+          "proponent": "费希尔·布莱克，迈伦·舒尔斯",
+          "era": "1973",
+          "constraints": "假设波动率恒定，忽略股息，不适用于极端市场",
+          "supported_factors": [
+            "隐含波动率因子",
+            "时间衰减因子",
+            "无风险利率"
+          ]
+        },
+        {
+          "name": "道氏理论",
+          "english_name": "Dow Theory",
+          "core_view": "市场趋势分为主要、次要和次要趋势，指数之间需相互确认",
+          "proponent": "查尔斯·道，威廉·汉密尔顿",
+          "era": "1900s",
+          "constraints": "滞后指标，主观性强，不适合短期交易",
+          "supported_factors": [
+            "趋势因子",
+            "成交量确认"
+          ]
+        },
+        {
+          "name": "凯恩斯选美理论",
+          "english_name": "Keynesian Beauty Contest",
+          "core_view": "投资成功取决于预测大众认为什么有价值，而非资产真实价值",
+          "proponent": "约翰·梅纳德·凯恩斯",
+          "era": "1936",
+          "constraints": "导致 reflexivity 和泡沫，脱离基本面",
+          "supported_factors": [
+            "市场情绪因子",
+            "共识预期因子",
+            "动量因子"
+          ]
+        }
+      ],
+      "valid_count": 15,
+      "invalid_count": 0
+    },
+    {
+      "topic": "因子模式",
+      "entity_type": "FactorPattern",
+      "concepts": [
+        {
+          "name": "低 PE 因子",
+          "type": "价值因子",
+          "math_pattern": "RANK(1 / PE_TTM)",
+          "economic_logic": "低估值股票长期表现优于高估值股票，符合价值投资理论，均值回归效应",
+          "performs_well_in": [
+            "震荡市",
+            "价值风格市场",
+            "熊市后期"
+          ],
+          "based_on_indicators": [
+            "PE",
+            "净利润",
+            "股价"
+          ]
+        },
+        {
+          "name": "低 PB 因子",
+          "type": "价值因子",
+          "math_pattern": "RANK(1 / PB)",
+          "economic_logic": "市净率低意味着股价接近净资产，安全边际高，适合重资产行业",
+          "performs_well_in": [
+            "熊市",
+            "金融地产板块",
+            "清算风险低时"
+          ],
+          "based_on_indicators": [
+            "PB",
+            "净资产",
+            "股价"
+          ]
+        },
+        {
+          "name": "高股息因子",
+          "type": "价值因子",
+          "math_pattern": "RANK(Dividend_Yield)",
+          "economic_logic": "高股息提供现金流保护，代表公司盈利真实且愿意回馈股东",
+          "performs_well_in": [
+            "低利率环境",
+            "防御性市场",
+            "震荡市"
+          ],
+          "based_on_indicators": [
+            "股息率",
+            "分红金额",
+            "股价"
+          ]
+        },
+        {
+          "name": "低 EV/EBITDA 因子",
+          "type": "价值因子",
+          "math_pattern": "RANK(1 / (EV / EBITDA))",
+          "economic_logic": "剔除资本结构和折旧影响，更纯粹反映企业运营价值的估值指标",
+          "performs_well_in": [
+            "高资本支出行业",
+            "跨国比较",
+            "并购活跃期"
+          ],
+          "based_on_indicators": [
+            "企业价值",
+            "EBITDA",
+            "债务",
+            "市值"
+          ]
+        },
+        {
+          "name": "营收增长因子",
+          "type": "成长因子",
+          "math_pattern": "RANK(YOY(Revenue))",
+          "economic_logic": "营收增长代表市场份额扩大或需求旺盛，是成长性的基础",
+          "performs_well_in": [
+            "牛市",
+            "成长风格市场",
+            "行业扩张期"
+          ],
+          "based_on_indicators": [
+            "营业收入",
+            "同比增长率"
+          ]
+        },
+        {
+          "name": "净利润增长因子",
+          "type": "成长因子",
+          "math_pattern": "RANK(YOY(Net_Income))",
+          "economic_logic": "净利润增长直接反映股东收益的增加，驱动股价上涨的核心动力",
+          "performs_well_in": [
+            "牛市",
+            "业绩披露期",
+            "成长风格市场"
+          ],
+          "based_on_indicators": [
+            "净利润",
+            "同比增长率"
+          ]
+        },
+        {
+          "name": "盈余惊喜因子",
+          "type": "成长因子",
+          "math_pattern": "RANK((Actual_EPS - Expected_EPS) / StdDev)",
+          "economic_logic": "实际业绩超出市场预期的部分会带来股价的重新定价和正向修正",
+          "performs_well_in": [
+            "财报季",
+            "信息不对称市场",
+            "分析师覆盖度高时"
+          ],
+          "based_on_indicators": [
+            "EPS",
+            "分析师预期",
+            "历史误差"
+          ]
+        },
+        {
+          "name": "价格动量因子",
+          "type": "动量因子",
+          "math_pattern": "RANK(RET_12M - RET_1M)",
+          "economic_logic": "过去表现好的股票倾向于继续表现好，反映投资者反应不足和趋势延续",
+          "performs_well_in": [
+            "趋势市",
+            "牛市",
+            "高流动性市场"
+          ],
+          "based_on_indicators": [
+            "收益率",
+            "收盘价",
+            "时间序列"
+          ]
+        },
+        {
+          "name": "短期反转因子",
+          "type": "动量因子",
+          "math_pattern": "RANK(-RET_1M)",
+          "economic_logic": "短期过度反应导致价格偏离，随后发生均值回归",
+          "performs_well_in": [
+            "震荡市",
+            "高换手市场",
+            "短期交易活跃期"
+          ],
+          "based_on_indicators": [
+            "月度收益率",
+            "收盘价"
+          ]
+        },
+        {
+          "name": "高 ROE 因子",
+          "type": "质量因子",
+          "math_pattern": "RANK(ROE)",
+          "economic_logic": "高净资产收益率代表公司利用股东资本创造利润的能力强",
+          "performs_well_in": [
+            "长期持有",
+            "价值成长风格",
+            "稳定经济期"
+          ],
+          "based_on_indicators": [
+            "净利润",
+            "净资产",
+            "ROE"
+          ]
+        },
+        {
+          "name": "低杠杆因子",
+          "type": "质量因子",
+          "math_pattern": "RANK(-Debt_to_Asset)",
+          "economic_logic": "低负债率意味着财务风险低，抗风险能力强，破产概率小",
+          "performs_well_in": [
+            "加息周期",
+            "信用紧缩期",
+            "熊市"
+          ],
+          "based_on_indicators": [
+            "资产负债率",
+            "总债务",
+            "总资产"
+          ]
+        },
+        {
+          "name": "盈利稳定性因子",
+          "type": "质量因子",
+          "math_pattern": "RANK(-STDDEV(ROE, 5Y))",
+          "economic_logic": "盈利波动小的公司更可预测，风险溢价低，受投资者青睐",
+          "performs_well_in": [
+            "防御性市场",
+            "长期投资",
+            "经济不确定性高时"
+          ],
+          "based_on_indicators": [
+            "ROE",
+            "历史财务数据",
+            "标准差"
+          ]
+        },
+        {
+          "name": "毛利率因子",
+          "type": "质量因子",
+          "math_pattern": "RANK(Gross_Profit_Margin)",
+          "economic_logic": "高毛利率代表产品竞争力强或拥有定价权，护城河深",
+          "performs_well_in": [
+            "消费行业",
+            "科技行业",
+            "通胀环境"
+          ],
+          "based_on_indicators": [
+            "毛利润",
+            "营业收入",
+            "毛利率"
+          ]
+        },
+        {
+          "name": "低波动率因子",
+          "type": "波动率因子",
+          "math_pattern": "RANK(-STDDEV(RET, 252))",
+          "economic_logic": "低波动股票风险调整后收益更高，符合低波动异象理论",
+          "performs_well_in": [
+            "熊市",
+            "高波动市场",
+            "风险厌恶期"
+          ],
+          "based_on_indicators": [
+            "日收益率",
+            "年化波动率",
+            "标准差"
+          ]
+        },
+        {
+          "name": "特异度波动率因子",
+          "type": "波动率因子",
+          "math_pattern": "RANK(-Idiosyncratic_Vol)",
+          "economic_logic": "剔除市场风险后的个股特有波动率低，代表信息风险低",
+          "performs_well_in": [
+            "量化中性策略",
+            "多因子模型",
+            "震荡市"
+          ],
+          "based_on_indicators": [
+            "残差波动率",
+            "市场收益",
+            "个股收益"
+          ]
+        },
+        {
+          "name": "小市值因子",
+          "type": "其他因子",
+          "math_pattern": "RANK(-LOG(Market_Cap))",
+          "economic_logic": "小公司成长空间大，且关注度低，存在流动性溢价和信息溢价",
+          "performs_well_in": [
+            "牛市初期",
+            "成长风格市场",
+            "流动性充裕时"
+          ],
+          "based_on_indicators": [
+            "总市值",
+            "股价",
+            "股本"
+          ]
+        },
+        {
+          "name": "低换手率因子",
+          "type": "其他因子",
+          "math_pattern": "RANK(-Turnover_Ratio)",
+          "economic_logic": "低换手代表筹码锁定性好，投资者信心稳定，或机构持仓集中",
+          "performs_well_in": [
+            "长期持有策略",
+            "机构主导市场",
+            "稳定期"
+          ],
+          "based_on_indicators": [
+            "成交量",
+            "流通股本",
+            "换手率"
+          ]
+        },
+        {
+          "name": "分析师预期上调因子",
+          "type": "其他因子",
+          "math_pattern": "RANK(DELTA(Analyst_Target_Price))",
+          "economic_logic": "分析师上调目标价或评级代表专业投资者看好，引导资金流入",
+          "performs_well_in": [
+            "财报季",
+            "研报密集期",
+            "机构主导市场"
+          ],
+          "based_on_indicators": [
+            "目标价",
+            "评级",
+            "分析师共识"
+          ]
+        },
+        {
+          "name": "资金净流入因子",
+          "type": "其他因子",
+          "math_pattern": "RANK(Net_Order_Flow)",
+          "economic_logic": "大单资金净流入代表主力机构买入，推动股价上涨",
+          "performs_well_in": [
+            "短线交易",
+            "高流动性市场",
+            "趋势形成期"
+          ],
+          "based_on_indicators": [
+            "订单流",
+            "成交量",
+            "买卖方向"
+          ]
+        },
+        {
+          "name": "低贝塔因子",
+          "type": "其他因子",
+          "math_pattern": "RANK(-Beta)",
+          "economic_logic": "低贝塔股票对市场下跌不敏感，防御性强，风险调整后收益高",
+          "performs_well_in": [
+            "熊市",
+            "市场下跌期",
+            "防御性配置"
+          ],
+          "based_on_indicators": [
+            "Beta 系数",
+            "市场收益率",
+            "个股收益率"
+          ]
+        }
+      ],
+      "valid_count": 20,
+      "invalid_count": 0
+    },
+    {
+      "topic": "市场制度",
+      "entity_type": "MarketRegime",
+      "concepts": [
+        {
+          "name": "牛市",
+          "definition": "主要市场指数从近期低点上涨超过 20%，且均线呈多头排列",
+          "characteristics": [
+            "投资者情绪乐观",
+            "成交量持续放大",
+            "领涨板块明显",
+            "利空消息被忽略"
+          ],
+          "typical_duration": "数月到数年",
+          "performs_well_factors": [
+            "进攻性因子",
+            "高 Beta 因子",
+            "成长因子",
+            "动量因子"
+          ],
+          "performs_poorly_factors": [
+            "防御性因子",
+            "低波动因子",
+            "高股息因子",
+            "反向因子"
+          ]
+        },
+        {
+          "name": "熊市",
+          "definition": "主要市场指数从近期高点下跌超过 20%，且均线呈空头排列",
+          "characteristics": [
+            "投资者情绪悲观",
+            "恐慌性抛售",
+            "流动性紧缩",
+            "利好消息被忽略"
+          ],
+          "typical_duration": "数月到数年",
+          "performs_well_factors": [
+            "防御性因子",
+            "低波动因子",
+            "高股息因子",
+            "做空因子"
+          ],
+          "performs_poorly_factors": [
+            "高 Beta 因子",
+            "成长因子",
+            "动量因子",
+            "高估值因子"
+          ]
+        },
+        {
+          "name": "震荡市",
+          "definition": "市场指数在 3 个月内波动幅度保持在±10% 以内，无明确趋势",
+          "characteristics": [
+            "缺乏明确方向",
+            "板块轮动快速",
+            "成交量萎缩或平稳",
+            "区间交易特征明显"
+          ],
+          "typical_duration": "数周到数月",
+          "performs_well_factors": [
+            "均值回归因子",
+            "高股息因子",
+            "Alpha 选股因子",
+            "波动率套利因子"
+          ],
+          "performs_poorly_factors": [
+            "趋势跟踪因子",
+            "动量因子",
+            "高 Beta 因子",
+            "突破策略因子"
+          ]
+        },
+        {
+          "name": "高波动市场",
+          "definition": "VIX 指数高于 25 或 realized volatility 超过历史 80% 分位数",
+          "characteristics": [
+            "日内振幅巨大",
+            "市场恐惧情绪高涨",
+            "期权隐含波动率上升",
+            "避险资产受追捧"
+          ],
+          "typical_duration": "数周到数月",
+          "performs_well_factors": [
+            "低波动因子 (相对)",
+            "防御性因子",
+            "尾部风险对冲因子",
+            "现金类资产"
+          ],
+          "performs_poorly_factors": [
+            "高 Beta 因子",
+            "杠杆因子",
+            "高估值成长因子",
+            "趋势跟踪因子"
+          ]
+        },
+        {
+          "name": "低波动市场",
+          "definition": "VIX 指数低于 15 或 realized volatility 低于历史 20% 分位数",
+          "characteristics": [
+            "市场走势平稳",
+            "投资者情绪自满",
+            "波动率溢价低",
+            "carry 策略有效"
+          ],
+          "typical_duration": "数月到数年",
+          "performs_well_factors": [
+            "动量因子",
+            "Carry 因子",
+            "高 Beta 因子",
+            "风险平价因子"
+          ],
+          "performs_poorly_factors": [
+            "尾部风险对冲因子",
+            "防御性因子",
+            "低波动因子",
+            "避险资产"
+          ]
+        },
+        {
+          "name": "价值风格市场",
+          "definition": "价值指数相对成长指数超额收益超过 5% (季度)",
+          "characteristics": [
+            "低 PE/PB 股票受追捧",
+            "周期股表现强势",
+            "利率上行预期",
+            "经济复苏阶段"
+          ],
+          "typical_duration": "数季度到数年",
+          "performs_well_factors": [
+            "价值因子",
+            "高股息因子",
+            "质量因子",
+            "盈利收益率因子"
+          ],
+          "performs_poorly_factors": [
+            "成长因子",
+            "科技板块因子",
+            "未盈利公司因子",
+            "高估值因子"
+          ]
+        },
+        {
+          "name": "成长风格市场",
+          "definition": "成长指数相对价值指数超额收益超过 5% (季度)",
+          "characteristics": [
+            "高营收增长股票受追捧",
+            "科技股表现强势",
+            "利率下行或稳定",
+            "风险偏好高"
+          ],
+          "typical_duration": "数季度到数年",
+          "performs_well_factors": [
+            "成长因子",
+            "动量因子",
+            "研发投入因子",
+            "盈利惊喜因子"
+          ],
+          "performs_poorly_factors": [
+            "价值因子",
+            "公用事业因子",
+            "银行因子",
+            "高股息因子"
+          ]
+        },
+        {
+          "name": "高流动性市场",
+          "definition": "市场换手率高于历史均值 1 个标准差，或 M2 增速显著上行",
+          "characteristics": [
+            "交易活跃",
+            "小盘股溢价明显",
+            "资金充裕",
+            "估值容忍度高"
+          ],
+          "typical_duration": "数月到数年",
+          "performs_well_factors": [
+            "小市值因子",
+            "高换手因子",
+            "投机性因子",
+            "次新股因子"
+          ],
+          "performs_poorly_factors": [
+            "大市值因子 (相对)",
+            "低换手因子",
+            "高流动性溢价因子",
+            "现金类资产"
+          ]
+        },
+        {
+          "name": "低流动性市场",
+          "definition": "市场换手率低于历史均值 1 个标准差，或信用利差大幅走阔",
+          "characteristics": [
+            "交易清淡",
+            "退出困难",
+            "流动性溢价上升",
+            "大盘股相对抗跌"
+          ],
+          "typical_duration": "数月到数年",
+          "performs_well_factors": [
+            "大市值因子",
+            "高流动性因子",
+            "现金类资产",
+            "高质量因子"
+          ],
+          "performs_poorly_factors": [
+            "小市值因子",
+            "低流动性因子",
+            "高杠杆因子",
+            "投机性因子"
+          ]
+        },
+        {
+          "name": "通胀上行期",
+          "definition": "CPI 同比增速超过 3% 且呈上升趋势",
+          "characteristics": [
+            "大宗商品价格上涨",
+            "加息预期增强",
+            "实际利率下行",
+            "成本压力传导"
+          ],
+          "typical_duration": "数季度到数年",
+          "performs_well_factors": [
+            "大宗商品因子",
+            "实物资产因子",
+            "定价权因子",
+            "能源板块因子"
+          ],
+          "performs_poorly_factors": [
+            "长久期债券因子",
+            "高估值成长因子",
+            "固定收益类资产",
+            "可选消费因子"
+          ]
+        }
+      ],
+      "valid_count": 10,
+      "invalid_count": 0
+    }
+  ],
+  "total_concepts": 64
+}

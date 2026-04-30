@@ -1,0 +1,64 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Data
+*.parquet
+*.csv
+*.h5
+data/sample/*.parquet
+data/sample/*.csv
+
+# Results
+results/
+logs/
+*.log
+
+# LLM generated data
+data/generated/
+
+# API Configuration (contains sensitive keys)
+config/llm.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation build
+docs/_build/

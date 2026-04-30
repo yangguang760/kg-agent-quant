@@ -1,0 +1,154 @@
+{
+  "factors": [
+    {
+      "metadata": {
+        "id": "factor_001",
+        "category": "quality",
+        "factor_type": "quality",
+        "index": 0,
+        "hypothesis_id": "hyp_001",
+        "quality_scores": {"csc": 0.85, "eq": 0.90, "sc": 0.88}
+      },
+      "result": {
+        "expression": "RANK(TS_MEAN($roe, 20))",
+        "status": "validated"
+      },
+      "hypothesis": "ROE的时间序列均值与股票未来收益正相关"
+    },
+    {
+      "metadata": {
+        "id": "factor_002",
+        "category": "quality",
+        "factor_type": "quality",
+        "index": 1,
+        "hypothesis_id": "hyp_002",
+        "quality_scores": {"csc": 0.80, "eq": 0.85, "sc": 0.82}
+      },
+      "result": {
+        "expression": "RANK(1/$pe)",
+        "status": "validated"
+      },
+      "hypothesis": "低PE股票未来收益更高"
+    },
+    {
+      "metadata": {
+        "id": "factor_003",
+        "category": "quality",
+        "factor_type": "quality",
+        "index": 2,
+        "hypothesis_id": "hyp_003",
+        "quality_scores": {"csc": 0.82, "eq": 0.88, "sc": 0.85}
+      },
+      "result": {
+        "expression": "RANK($roe / $roa)",
+        "status": "validated"
+      },
+      "hypothesis": "ROE与ROA的比率反映公司盈利能力质量"
+    },
+    {
+      "metadata": {
+        "id": "factor_004",
+        "category": "value",
+        "factor_type": "value",
+        "index": 3,
+        "hypothesis_id": "hyp_004",
+        "quality_scores": {"csc": 0.78, "eq": 0.82, "sc": 0.80}
+      },
+      "result": {
+        "expression": "RANK(-TS_STD($returns, 20))",
+        "status": "validated"
+      },
+      "hypothesis": "低波动股票具有更高风险调整后收益"
+    },
+    {
+      "metadata": {
+        "id": "factor_005",
+        "category": "value",
+        "factor_type": "value",
+        "index": 4,
+        "hypothesis_id": "hyp_005",
+        "quality_scores": {"csc": 0.75, "eq": 0.80, "sc": 0.78}
+      },
+      "result": {
+        "expression": "RANK(TS_MEAN($close / $vwap - 1, 10))",
+        "status": "validated"
+      },
+      "hypothesis": "价格与均价的偏离度反映短期趋势"
+    },
+    {
+      "metadata": {
+        "id": "factor_006",
+        "category": "quality",
+        "factor_type": "quality",
+        "index": 5,
+        "hypothesis_id": "hyp_006",
+        "quality_scores": {"csc": 0.88, "eq": 0.92, "sc": 0.90}
+      },
+      "result": {
+        "expression": "RANK(TS_DELTA($roe, 1))",
+        "status": "validated"
+      },
+      "hypothesis": "ROE的改善预示未来收益提升"
+    },
+    {
+      "metadata": {
+        "id": "factor_007",
+        "category": "momentum",
+        "factor_type": "momentum",
+        "index": 6,
+        "hypothesis_id": "hyp_007",
+        "quality_scores": {"csc": 0.80, "eq": 0.85, "sc": 0.82}
+      },
+      "result": {
+        "expression": "RANK(TS_SUM($returns, 20))",
+        "status": "validated"
+      },
+      "hypothesis": "过去20日累计收益率反映动量效应"
+    },
+    {
+      "metadata": {
+        "id": "factor_008",
+        "category": "momentum",
+        "factor_type": "momentum",
+        "index": 7,
+        "hypothesis_id": "hyp_008",
+        "quality_scores": {"csc": 0.77, "eq": 0.80, "sc": 0.78}
+      },
+      "result": {
+        "expression": "RANK(TS_DELAY($returns, 5))",
+        "status": "validated"
+      },
+      "hypothesis": "过去5日收益率的滞后值预测未来收益"
+    },
+    {
+      "metadata": {
+        "id": "factor_009",
+        "category": "size",
+        "factor_type": "size",
+        "index": 8,
+        "hypothesis_id": "hyp_009",
+        "quality_scores": {"csc": 0.72, "eq": 0.78, "sc": 0.75}
+      },
+      "result": {
+        "expression": "RANK(-$pb)",
+        "status": "validated"
+      },
+      "hypothesis": "低PB反映低估值或高账面价值"
+    },
+    {
+      "metadata": {
+        "id": "factor_010",
+        "category": "value",
+        "factor_type": "value",
+        "index": 9,
+        "hypothesis_id": "hyp_010",
+        "quality_scores": {"csc": 0.76, "eq": 0.80, "sc": 0.78}
+      },
+      "result": {
+        "expression": "RANK(1 / (1 + TS_MEAN($pe, 20)))",
+        "status": "validated"
+      },
+      "hypothesis": "PE的时间序列倒数反映估值水平"
+    }
+  ]
+}
