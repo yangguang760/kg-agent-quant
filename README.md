@@ -6,6 +6,7 @@
 
 *A multi-stage pipeline for discovering and validating quantitative alpha factors using Large Language Models with stage-wise independent verification.*
 
+[中文文档](README_zh.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
@@ -238,8 +239,6 @@ The embedded knowledge graph contains:
 - [API Reference](docs/api/README.md) - Complete API documentation
 - [Architecture](docs/ARCHITECTURE.md) - System design
 - [QLib Operators](docs/qlib_operators.md) - Expression syntax
-
-[中文文档](README_zh.md)
 
 ## License
 
