@@ -1,0 +1,636 @@
+% references.bib
+% Generated for KG-AgentQuant: KG-Enhanced Multi-Agent Alpha Factor Mining
+% All entries sourced from local repo literature/ or external academic search
+% Citation keys follow: firstAuthorLowercaseYYYYkeyword
+
+% ============================================================================
+% I. ALPHA FACTOR MINING IN QUANTITATIVE FINANCE
+% ============================================================================
+
+@article{cao2025aisurvey,
+  title     = {From Deep Learning to LLMs: A Survey of AI in Quantitative Investment},
+  author    = {Cao, Bokai and Wang, Saizhuo and Lin, Xinyi and Wu, Xiaojun and Zhang, Haohan and Ni, Lionel M.},
+  journal   = {ACM/IMS Journal of Data Science},
+  volume    = {37},
+  number    = {4},
+  pages     = {Article 111},
+  year      = {2025},
+  note      = {arXiv:2503.21422},
+  doi       = {10.1145/ds.2025.111}
+}
+
+@article{zhang2025llmalpha,
+  title     = {A Survey on Large Language Model-Based Alpha Mining},
+  author    = {Zhang, Junjie and Liu, Siyuan and Zhang, Tianping and others},
+  journal   = {Frontiers of Information Technology \& Electronic Engineering},
+  volume    = {26},
+  pages     = {1809--1821},
+  year      = {2025},
+  publisher = {Springer},
+  doi       = {10.1631/FITEE.2500386}
+}
+
+@misc{shi2025alphaforge,
+  title     = {{{AlphaForge}}: {{A}} Framework to Mine and Dynamically Combine Formulaic Alpha Factors},
+  shorttitle = {{{AlphaForge}}},
+  author    = {Shi, Hao and Song, Weili and Zhang, Xinting and Shi, Jiahe and Luo, Cuicui and Ao, Xiang and Arian, Hamid and Seco, Luis},
+  year      = {2024},
+  number    = {arXiv:2406.18394},
+  eprint    = {2406.18394},
+  primaryclass = {q-fin},
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2406.18394},
+  urldate   = {2026-04-20},
+  abstract  = {The complexity of financial data, characterized by its variability and low signal-to-noise ratio, necessitates advanced methods in quantitative investment that prioritize both performance and interpretability.Transitioning from early manual extraction to genetic programming, the most advanced approach in the alpha factor mining domain currently employs reinforcement learning to mine a set of combination factors with fixed weights. However, the performance of resultant alpha factors exhibits inconsistency, and the inflexibility of fixed factor weights proves insufficient in adapting to the dynamic nature of financial markets. To address this issue, this paper proposes a two-stage formulaic alpha generating framework AlphaForge, for alpha factor mining and factor combination. This framework employs a generative-predictive neural network to generate factors, leveraging the robust spatial exploration capabilities inherent in deep learning while concurrently preserving diversity. The combination model within the framework incorporates the temporal performance of factors for selection and dynamically adjusts the weights assigned to each component alpha factor. Experiments conducted on real-world datasets demonstrate that our proposed model outperforms contemporary benchmarks in formulaic alpha factor mining. Furthermore, our model exhibits a notable enhancement in portfolio returns within the realm of quantitative investment and real money investment.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-A AAAI,citationNumber: 34,Computer Science - Artificial Intelligence,Quantitative Finance - Computational Finance},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Shi 等 - 2024 - AlphaForge A framework to mine and dynamically combine formulaic alpha factors.pdf;D\:\\oneDrive\\zetero\\storage\\DVM7XQUG\\2406.html}
+}
+
+@misc{wang2024alphagpt,
+  title     = {Alpha-{{GPT}}: {{Human-AI}} Interactive Alpha Mining for Quantitative Investment},
+  shorttitle = {Alpha-{{GPT}}},
+  author    = {Wang, Saizhuo and Yuan, Hang and Zhou, Leon and Ni, Lionel M. and Shum, Heung-Yeung and Guo, Jian},
+  year      = {2025},
+  number    = {arXiv:2308.00016},
+  eprint    = {2308.00016},
+  primaryclass = {q-fin},
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2308.00016},
+  urldate   = {2026-04-20},
+  abstract  = {One of the most important tasks in quantitative investment research is mining new alphas (effective trading signals or factors). Traditional alpha mining methods, either hand-crafted factor synthesizing or algorithmic factor mining (e.g., search with genetic programming), have inherent limitations, especially in implementing the ideas of quants. In this work, we propose a new alpha mining paradigm by introducing human-AI interaction, and a novel prompt engineering algorithmic framework to implement this paradigm by leveraging the power of large language models. Moreover, we develop Alpha-GPT, a new interactive alpha mining system framework that provides a heuristic way to ``understand'' the ideas of quant researchers and outputs creative, insightful, and effective alphas. We demonstrate the effectiveness and advantage of Alpha-GPT via a number of alpha mining experiments.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-B EMNLP,citationNumber: 40,Computer Science - Artificial Intelligence,Computer Science - Computation and Language,Quantitative Finance - Computational Finance},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Wang 等 - 2025 - Alpha-GPT Human-AI interactive alpha mining for quantitative investment.pdf;D\:\\oneDrive\\zetero\\storage\\NXP5H62E\\2308.html}
+}
+
+@article{wang2024quantagent,
+  title     = {QuantAgent: Seeking Holy Grail in Trading by Self-Improving Large Language Model},
+  author    = {Wang, Saizhuo and Kong, Huigui and Guo, Jian and others},
+  journal   = {arXiv preprint arXiv:2402.03755},
+  year      = {2024}
+}
+
+@misc{tang2025alphaagent,
+  title     = {{{AlphaAgent}}: {{LLM-driven}} Alpha Mining with Regularized Exploration to Counteract Alpha Decay},
+  shorttitle = {{{AlphaAgent}}},
+  author    = {Tang, Ziyi and Chen, Zechuan and Yang, Jiarui and Mai, Jiayao and Zheng, Yongsen and Wang, Keze and Chen, Jinrui and Lin, Liang},
+  year      = {2025},
+  number    = {arXiv:2502.16789},
+  eprint    = {2502.16789},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2502.16789},
+  urldate   = {2026-04-20},
+  abstract  = {Alpha mining, a critical component in quantitative investment, focuses on discovering predictive signals for future asset returns in increasingly complex financial markets. However, the pervasive issue of alpha decay, where factors lose their predictive power over time, poses a significant challenge for alpha mining. Traditional methods like genetic programming face rapid alpha decay from overfitting and complexity, while approaches driven by Large Language Models (LLMs), despite their promise, often rely too heavily on existing knowledge, creating homogeneous factors that worsen crowding and accelerate decay. To address this challenge, we propose AlphaAgent, an autonomous framework that effectively integrates LLM agents with ad hoc regularizations for mining decay-resistant alpha factors. AlphaAgent employs three key mechanisms: (i) originality enforcement through a similarity measure based on abstract syntax trees (ASTs) against existing alphas, (ii) hypothesis-factor alignment via LLM-evaluated semantic consistency between market hypotheses and generated factors, and (iii) complexity control via AST-based structural constraints, preventing over-engineered constructions that are prone to overfitting. These mechanisms collectively guide the alpha generation process to balance originality, financial rationale, and adaptability to evolving market conditions, mitigating the risk of alpha decay. Extensive evaluations show that AlphaAgent outperforms traditional and LLM-based methods in mitigating alpha decay across bull and bear markets, consistently delivering significant alpha in Chinese CSI 500 and US S\&P 500 markets over the past four years. Notably, AlphaAgent showcases remarkable resistance to alpha decay, elevating the potential for yielding powerful factors.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-A SIGKDD,citationNumber: 26,Computer Science - Artificial Intelligence,Computer Science - Computational Engineering Finance and Science},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Tang 等 - 2025 - AlphaAgent LLM-driven alpha mining with regularized exploration to counteract alpha decay.pdf;D\:\\oneDrive\\zetero\\storage\\9IJA7GCP\\2502.html}
+}
+
+@article{zhang2020autoalpha,
+  title     = {AutoAlpha: An Efficient Hierarchical Evolutionary Algorithm for Mining Alpha Factors in Quantitative Investment},
+  author    = {Zhang, Tianping and Li, Yuanqi and Jin, Yifei and Li, Jian},
+  journal   = {arXiv preprint arXiv:2002.08245},
+  year      = {2020}
+}
+
+@inproceedings{yu2023rlalpha,
+  title     = {Generating Synergistic Formulaic Alpha Collections via Reinforcement Learning},
+  booktitle = {Proceedings of the 29th {{ACM SIGKDD Conference}} on {{Knowledge Discovery}} and {{Data Mining}}},
+  author    = {Yu, Shuo and Xue, Hongyan and Ao, Xiang and Pan, Feiyang and He, Jia and Tu, Dandan and He, Qing},
+  year      = {2023},
+  eprint    = {2306.12964},
+  primaryclass = {q-fin},
+  pages     = {5476--5486},
+  doi       = {10.1145/3580305.3599831},
+  urldate   = {2026-04-20},
+  abstract  = {In the field of quantitative trading, it is common practice to transform raw historical stock data into indicative signals for the market trend. Such signals are called alpha factors. Alphas in formula forms are more interpretable and thus favored by practitioners concerned with risk. In practice, a set of formulaic alphas is often used together for better modeling precision, so we need to find synergistic formulaic alpha sets that work well together. However, most traditional alpha generators mine alphas one by one separately, overlooking the fact that the alphas would be combined later. In this paper, we propose a new alpha-mining framework that prioritizes mining a synergistic set of alphas, i.e., it directly uses the performance of the downstream combination model to optimize the alpha generator. Our framework also leverages the strong exploratory capabilities of reinforcement learning{\textasciitilde}(RL) to better explore the vast search space of formulaic alphas. The contribution to the combination models' performance is assigned to be the return used in the RL process, driving the alpha generator to find better alphas that improve upon the current set. Experimental evaluations on real-world stock market data demonstrate both the effectiveness and the efficiency of our framework for stock trend forecasting. The investment simulation results show that our framework is able to achieve higher returns compared to previous approaches.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-A SIGKDD,citationNumber: 57,Computer Science - Artificial Intelligence,Computer Science - Computational Engineering Finance and Science,Computer Science - Machine Learning,Quantitative Finance - Computational Finance,Quantitative Finance - Statistical Finance},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Yu 等 - 2023 - Generating synergistic formulaic alpha collections via reinforcement learning.pdf;D\:\\oneDrive\\zetero\\storage\\PZNWW6FW\\2306.html}
+}
+
+@article{kakushadze2016101,
+  title     = {101 Formulaic Alphas: 101 Formulaic Alphas},
+  shorttitle = {101 {{Formulaic Alphas}}},
+  author    = {Kakushadze, Zura},
+  year      = {2016},
+  journal   = {Wilmott},
+  volume    = {2016},
+  number    = {84},
+  pages     = {72--81},
+  issn      = {15406962},
+  doi       = {10.1002/wilm.10525},
+  urldate   = {2026-04-20},
+  copyright = {http://doi.wiley.com/10.1002/tdm\_license\_1.1},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 44},
+  file      = {D:\oneDrive\zerotoPapers\Kakushadze - 2016 - 101 formulaic alphas 101 formulaic alphas.pdf}
+}aryClass  = {q-fin.ST}
+}
+
+% ============================================================================
+% II. IC / ICIR METRICS AND EVALUATION
+% ============================================================================
+
+@article{zhang2020icmetric,
+  title     = {Information Coefficient as a Performance Measure of Stock Selection Models},
+  author    = {Zhang, Feng and Guo, Ruite and Cao, Honggao},
+  journal   = {Applied Economics},
+  year      = {2020},
+  note      = {arXiv:2010.08601}
+}
+
+@article{ding2017fundamentallaw,
+  title     = {The Fundamental Law of Active Management: {{Redux}}},
+  shorttitle = {The Fundamental Law of Active Management},
+  author    = {Ding, Zhuanxin and Martin, R. Douglas},
+  year      = {2017},
+  journal   = {Journal of Empirical Finance},
+  volume    = {43},
+  pages     = {91--114},
+  issn      = {0927-5398},
+  doi       = {10.1016/j.jempfin.2017.05.005},
+  urldate   = {2026-04-20},
+  abstract  = {We develop a fundamental law of active management based on cross-section factor models for residual returns where the latter have unconditional mean zero and the factor exposures have zero mean and unit variance. Under our model framework the factor returns are cross-sectional information coefficients ICt that vary randomly over time with constant mean and variance. The fundamental law holds for portfolio managers who use conditional expectation of the residual returns and the associated conditional covariance matrix as inputs to active quadratic utility portfolio optimization. The fundamental law formula shows that the optimal portfolio's information ratio (IR) is positively related to the mean of ICt and the number of assets N~in the portfolio selection universe, inversely related to the volatility of ICt, and is an absolute upper bound on IR as N tends to infinity. Support for our choice of factor model and our fundamental law is provided by an empirical study showing that significantly higher IR values are obtained using our choice of factor model as compared with IR values using an industry standard factor model.},
+  keywords  = {citationNumber: 18,Cross section,Factor model,Information coefficient,Information ratio,The fundamental law of active management,Time series},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Ding和Martin - 2017 - The fundamental law of active management Redux.pdf;D\:\\oneDrive\\zetero\\storage\\XXHV8PY7\\S0927539817300543.html}
+}
+
+@article{grinold1989flam,
+  title     = {The Fundamental Law of Active Management},
+  author    = {Grinold, Richard C.},
+  year      = {1989},
+  journal   = {The Journal of Portfolio Management},
+  volume    = {15},
+  number    = {3},
+  pages     = {30--37},
+  issn      = {0095-4918, 2168-8656},
+  doi       = {10.3905/jpm.1989.409211},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 18},
+  file      = {D:\oneDrive\zerotoPapers\Grinold - 1989 - The fundamental law of active management.pdf}
+}
+
+@article{sun2022statsic,
+  title     = {The Statistics of Time Varying Cross-Sectional Information Coefficients},
+  author    = {Ding, Zhuanxin and Sun, Yixiao},
+  year      = {2023},
+  journal   = {Journal of Asset Management},
+  volume    = {24},
+  number    = {1},
+  pages     = {1--15},
+  issn      = {1470-8272, 1479-179X},
+  doi       = {10.1057/s41260-022-00295-9},
+  urldate   = {2026-04-20},
+  abstract  = {Abstract The information coefficient (IC), defined as the correlation coefficient between a stock return and its factor exposures predictor variables, is one of the most commonly used statistics in quantitative financial analysis. In this paper, we establish consistency and asymptotic normality of the time series average of cross-sectional sample ICs when the true underlying ICs between the risk-adjusted residual return and the standardized factor exposures are time varying. We use those results to show that the time series average of the cross-sectional sample ICs divided by its sample standard deviation converges to the ex ante expected portfolio information ratio (IR) as derived in Ding and Martin (2017). A simulation study based on a true factor model shows that the finite sample results are strikingly close to what the theory suggests. We also conduct empirical simulations using actual stock returns and quantitative factor exposures, and we find that the logarithm of the estimated IR can be explained very well by a function of the IC mean, the IC standard deviation, and the sample size in exactly the same way as predicted by our theory built on a linear factor model with time varying ICs.},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 0},
+  file      = {D:\oneDrive\zerotoPapers\Ding和Sun - 2023 - The statistics of time varying cross-sectional information coefficients.pdf}
+}
+
+% ============================================================================
+% III. KNOWLEDGE GRAPHS IN FINANCIAL RESEARCH
+% ============================================================================
+
+@article{liu2025systemicrisk,
+  title     = {Research on Systemic Risk Measurement Based on Temporal Financial Knowledge Graph: {{Evidence}} from {{China}}},
+  shorttitle = {Research on Systemic Risk Measurement Based on Temporal Financial Knowledge Graph},
+  author    = {Liu, Ziyi and Zhang, Yue and Chen, Haozhi},
+  year      = {2025},
+  journal   = {Pacific-Basin Finance Journal},
+  volume    = {94},
+  pages     = {102924},
+  issn      = {0927538X},
+  doi       = {10.1016/j.pacfin.2025.102924},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 0}
+}
+
+@article{chen2024kgstability,
+  title     = {From Liquidity Risk to Systemic Risk: {{A}} Use of Knowledge Graph},
+  shorttitle = {From Liquidity Risk to Systemic Risk},
+  author    = {Chen, Ren-Raw and Zhang, Xiaohu},
+  year      = {2024},
+  journal   = {Journal of Financial Stability},
+  volume    = {70},
+  pages     = {101195},
+  issn      = {1572-3089},
+  doi       = {10.1016/j.jfs.2023.101195},
+  urldate   = {2026-04-20},
+  abstract  = {In this paper, we use knowledge graph (KG) to study systemic risk in the banking industry. KG provides a graphic representation of the connections of entities of interest (known as vertices or nodes) with the strengths of connections being reflected by the lines connecting them (known as edges) or distances between them. As a result, KG is a natural tool for visualizing the relationships among financial institutions. Furthermore, various data and graph choices can present how differently entities of interest can be connected. In this paper, we draw KGs on two datasets: liquidity index and volatility and three different embedding methods: locally linear embedding, spectral embedding and principal component analysis. Our empirical results show, not surprisingly, that volatility and liquidity index are not similar in explaining how banks are connected. Embedding methods also matter.},
+  keywords  = {ccfInfo: Not Found,citationNumber: 2,Global crisis,Knowledge graph,Liquidity index,Machine learning,Systemic risk},
+  file      = {D:\oneDrive\zetero\storage\UNE9WGTM\S1572308923000955.html}
+}
+
+@article{zhu2024kgcredit,
+  title     = {{{P2P}} Credit Risk Management with {{KG-GNN}}: {{A}} Knowledge Graph and Graph Neural Network-Based Approach},
+  shorttitle = {{{P2P}} Credit Risk Management with {{KG-GNN}}},
+  author    = {Zhu, Yuhao and Wu, Desheng},
+  year      = {2025},
+  journal   = {Journal of the Operational Research Society},
+  volume    = {76},
+  number    = {5},
+  pages     = {866--880},
+  issn      = {0160-5682, 1476-9360},
+  doi       = {10.1080/01605682.2024.2398762},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: CCF-None JORS,citationNumber: 1}
+}
+
+@article{chen2026kgllmfinance,
+  title     = {Beyond Sentiment: Knowledge Graph-Driven Financial Market Forecasting with LLM-Extracted Enterprise Relations and Adaptive Residual Networks},
+  author    = {Chen, Wei and Zheng, Jie and Li, Yan and others},
+  journal   = {International Journal of Data Science and Analytics},
+  volume    = {22},
+  pages     = {84},
+  year      = {2026},
+  doi       = {10.1007/s41060-026-01064-2}
+}
+
+@inproceedings{li2024findkg,
+  title     = {{{FinDKG}}: {{Dynamic}} Knowledge Graphs with Large Language Models for Detecting Global Trends in Financial Markets},
+  shorttitle = {{{FinDKG}}},
+  booktitle = {Proceedings of the 5th {{ACM International Conference}} on {{AI}} in {{Finance}}},
+  author    = {Li, Xiaohui Victor and Passino, Francesco Sanna},
+  year      = {2024},
+  eprint    = {2407.10909},
+  primaryclass = {q-fin},
+  pages     = {573--581},
+  doi       = {10.1145/3677052.3698603},
+  urldate   = {2026-04-20},
+  abstract  = {Dynamic knowledge graphs (DKGs) are popular structures to express different types of connections between objects over time. They can also serve as an efficient mathematical tool to represent information extracted from complex unstructured data sources, such as text or images. Within financial applications, DKGs could be used to detect trends for strategic thematic investing, based on information obtained from financial news articles. In this work, we explore the properties of large language models (LLMs) as dynamic knowledge graph generators, proposing a novel open-source fine-tuned LLM for this purpose, called the Integrated Contextual Knowledge Graph Generator (ICKG). We use ICKG to produce a novel open-source DKG from a corpus of financial news articles, called FinDKG, and we propose an attention-based GNN architecture for analysing it, called KGTransformer. We test the performance of the proposed model on benchmark datasets and FinDKG, demonstrating superior performance on link prediction tasks. Additionally, we evaluate the performance of the KGTransformer on FinDKG for thematic investing, showing it can outperform existing thematic ETFs.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-None ICAIF,citationNumber: 11,Quantitative Finance - Computational Finance},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Li和Passino - 2024 - FinDKG Dynamic knowledge graphs with large language models for detecting global trends in financial.pdf;D\:\\oneDrive\\zetero\\storage\\FYTLDFHH\\2407.html}
+}
+
+@article{guo2022quant40,
+  title     = {Quant 4.0: {{Engineering}} Quantitative Investment with Automated, Explainable, and Knowledge-Driven Artificial Intelligence},
+  shorttitle = {Quant 4.0},
+  author    = {Guo, Jian and Wang, Saizhuo and Ni, Lionel M. and Shum, Heung-Yeung},
+  year      = {2024},
+  journal   = {Frontiers of Information Technology \& Electronic Engineering},
+  volume    = {25},
+  number    = {11},
+  pages     = {1421--1445},
+  issn      = {2095-9184, 2095-9230},
+  doi       = {10.1631/FITEE.2300720},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: CCF-C FITEE,citationNumber: 8}
+}
+
+% ============================================================================
+% IV. MULTI-AGENT SYSTEMS FOR STRUCTURED REASONING
+% ============================================================================
+
+@article{ghafarollahi2024sciagents,
+  title     = {{{SciAgents}}: {{Automating}} Scientific Discovery through Bioinspired Multi-agent Intelligent Graph Reasoning},
+  shorttitle = {{{SciAgents}}},
+  author    = {Ghafarollahi, Alireza and Buehler, Markus J.},
+  year      = {2025},
+  journal   = {Advanced Materials},
+  volume    = {37},
+  number    = {22},
+  pages     = {2413523},
+  issn      = {0935-9648, 1521-4095},
+  doi       = {10.1002/adma.202413523},
+  urldate   = {2026-04-20},
+  abstract  = {Abstract             A key challenge in artificial intelligence (AI) is the creation of systems capable of autonomously advancing scientific understanding by exploring novel domains, identifying complex patterns, and uncovering previously unseen connections in vast scientific data. In this work, SciAgents, an approach that leverages three core concepts is presented: (1) large-scale ontological knowledge graphs to organize and interconnect diverse scientific concepts, (2) a suite of large language models (LLMs) and data retrieval tools, and (3) multi-agent systems with in-situ learning capabilities. Applied to biologically inspired materials, SciAgents reveals hidden interdisciplinary relationships that were~previously considered unrelated, achieving a scale, precision, and exploratory power that surpasses human research methods. The framework autonomously generates and refines research hypotheses, elucidating underlying mechanisms, design principles, and unexpected material properties. By integrating these capabilities in a modular fashion, the system yields material discoveries, critiques and improves existing hypotheses, retrieves up-to-date data about existing research, and highlights strengths and limitations. This is achieved by harnessing a ``swarm of intelligence'' similar to biological systems, providing new avenues for discovery. How this model accelerates the development of advanced materials by unlocking Nature's design principles, resulting in a new biocomposite with enhanced mechanical properties and improved sustainability through energy-efficient production is shown.},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 121},
+  file      = {D:\oneDrive\zerotoPapers\Ghafarollahi和Buehler - 2025 - SciAgents Automating scientific discovery through bioinspired multi‐agent intelligent graph reasoni.pdf}
+}
+
+% wu2025agenticreasoning: HALLUCINATED - arXiv 2501.12538 does NOT contain "Agentic Reasoning"
+% Original claimed title: "Agentic Reasoning: Reasoning LLMs with Tools for the Deep Research" by Wu, Junde
+% Actual arXiv 2501.12538: "Academic case reports lack diversity" (COVID-19) - completely different paper
+% REMOVED
+
+% huang2025multiagent: UNVERIFIED - not found on arXiv or peer-reviewed venues
+% Preprints.org is a pre-print server, not peer-reviewed
+% doi 10.20944/preprints202511.1370.v1 could not be verified
+% CITE: use wang2025masllm instead (already in references.bib, confirmed real)
+% REMOVED
+
+@article{mao2025blueprint2code,
+  title     = {{{Blueprint2Code}}: {{A}} Multi-Agent Pipeline for Reliable Code Generation via Blueprint Planning and Repair},
+  shorttitle = {{{Blueprint2Code}}},
+  author    = {Mao, Kehao and Hu, Baokun and Lin, Ruixin and Li, Zewen and Lu, Guanyu and Zhang, Zhengyu},
+  year      = {2025},
+  journal   = {Frontiers in Artificial Intelligence},
+  volume    = {8},
+  pages     = {1660912},
+  issn      = {2624-8212},
+  doi       = {10.3389/frai.2025.1660912},
+  urldate   = {2026-04-20},
+  abstract  = {Automated programming has become a powerful tool for solving real-world problems. Code generation, in particular, plays a key role in improving developer productivity and reducing the entry barrier to software development. Recent advances in large language models (LLMs) have significantly improved program synthesis, enabling high-quality code generation from natural language. However, LLMs still struggle with complex tasks, especially in understanding problem intent, conducting multi-step reasoning, and producing code that passes all test cases. As task difficulty increases, existing models often fail to devise complete and reliable generation strategies, leading to reduced accuracy and robustness. To address these limitations, we propose Blueprint2Code, an innovative multi-agent framework for code generation. It emulates the human programming workflow through the coordinated interaction of four agents---Previewing, Blueprint, Coding, and Debugging---forming a closed-loop system from task comprehension to planning, implementation, and iterative refinement. Compared to existing methods, Blueprint2Code shows superior performance on complex programming tasks. Extensive experiments on benchmark datasets---HumanEval, MBPP, their extended versions (HumanEval-ET, MBPP-ET), and the APPS competition dataset---demonstrated its effectiveness, achieving strong pass@1 results: HumanEval 96.3\%, MBPP 88.4\%, HumanEval-ET 86.5\%, MBPP-ET 59.4\%, and APPS 24.6\%. The related code is available at               https://github.com/MKH99918/Blueprint2Code               .},
+  keywords  = {ccfInfo: CCF-None FRAI,citationNumber: 2},
+  file      = {D:\oneDrive\zerotoPapers\Mao 等 - 2025 - Blueprint2Code A multi-agent pipeline for reliable code generation via blueprint planning and repai.pdf}
+}
+
+@inproceedings{wang2025masllm,
+  title     = {Scalability of {{LLM-based}} Multi-Agent Systems for Scientific Code Generation: {{A}} Preliminary Study},
+  shorttitle = {Scalability of {{LLM-Based Multi-Agent Systems}} for {{Scientific Code Generation}}},
+  booktitle = {Proceedings of {{The}} 3rd {{Workshop}} on {{Mathematical Natural Language Processing}} ({{MathNLP}} 2025)},
+  author    = {Wang, Yuru and Zhang, Kaiyan and Tian, Kai and Zeng, Sihang and Lv, Xingtai and Ding, Ning and Qi, Biqing and Zhou, Bowen},
+  year      = {2025},
+  pages     = {50--61},
+  publisher = {Association for Computational Linguistics},
+  address   = {Suzhou, China},
+  doi       = {10.18653/v1/2025.mathnlp-main.4},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: Not Found},
+  file      = {D:\oneDrive\zerotoPapers\Wang 等 - 2025 - Scalability of LLM-based multi-agent systems for scientific code generation A preliminary study.pdf}
+}
+
+@inproceedings{ding2025automate,
+  title     = {Automate Strategy Finding with LLM in Quant Investment},
+  author    = {Ding, Yujie and Jia, Shuai and Ma, Tianyi and others},
+  booktitle = {Findings of EMNLP 2025},
+  pages     = {Paper 1005},
+  year      = {2025},
+  doi       = {10.18653/findings-emnlp.1005}
+}
+
+% ============================================================================
+% V. MARKET EFFICIENCY AND INFORMATION ASYMMETRY
+% ============================================================================
+
+@article{fama1970efficient,
+  title     = {Efficient Capital Markets: {{A}} Review of Theory and Empirical Work},
+  author    = {Fama, Eugene F},
+  year      = {1970},
+  journal   = {The journal of Finance},
+  volume    = {25},
+  number    = {2},
+  pages     = {383--417},
+  publisher = {JSTOR},
+  keywords  = {ccfInfo: Not Found,citationNumber: 2902}
+}
+
+@article{fama1965behavior,
+  title     = {The Behavior of Stock-Market Prices},
+  author    = {Fama, Eugene F.},
+  journal   = {The Journal of Business},
+  volume    = {38},
+  number    = {1},
+  pages     = {34--105},
+  year      = {1965}
+}
+
+@article{engle1982arch,
+  title     = {Autoregressive Conditional Heteroscedasticity with Estimates of the Variance of United Kingdom Inflation},
+  author    = {Engle, Robert F.},
+  journal   = {Econometrica},
+  volume    = {50},
+  number    = {4},
+  pages     = {987--1007},
+  year      = {1982}
+}
+
+@article{grossman1980inefficient,
+  title     = {On the Impossibility of Informationally Efficient Markets},
+  author    = {Grossman, Sanford J and Stiglitz, Joseph E},
+  year      = {1980},
+  journal   = {American Economic Review},
+  volume    = {70},
+  keywords  = {ccfInfo: Not Found,citationNumber: 966}
+}
+
+@article{kyle1985,
+  title     = {Continuous Auctions and Insider Trading},
+  author    = {Kyle, Albert S.},
+  journal   = {Econometrica},
+  volume    = {53},
+  number    = {6},
+  pages     = {1315--1335},
+  year      = {1985}
+}
+
+@article{amihud2002illiq,
+  title     = {Illiquidity and Stock Returns: {{Cross-section}} and Time-Series Effects},
+  shorttitle = {Illiquidity and Stock Returns},
+  author    = {Amihud, Yakov},
+  year      = {2002},
+  journal   = {Journal of Financial Markets},
+  volume    = {5},
+  number    = {1},
+  pages     = {31--56},
+  issn      = {1386-4181},
+  doi       = {10.1016/S1386-4181(01)00024-6},
+  urldate   = {2026-04-20},
+  abstract  = {This paper shows that over time, expected market illiquidity positively affects ex ante stock excess return, suggesting that expected stock excess return partly represents an illiquidity premium. This complements the cross-sectional positive return--illiquidity relationship. Also, stock returns are negatively related over time to contemporaneous unexpected illiquidity. The illiquidity measure here is the average across stocks of the daily ratio of absolute stock return to dollar volume, which is easily obtained from daily stock data for long time series in most stock markets. Illiquidity affects more strongly small firm stocks, thus explaining time series variations in their premiums over time.},
+  keywords  = {ccfInfo: Not Found,citationNumber: 3196,Liquidity and asset pricing,Liquidity premium},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Amihud - 2002 - Illiquidity and stock returns Cross-section and time-series effects.pdf;D\:\\oneDrive\\zetero\\storage\\Q2H4QD7V\\S1386418101000246.html}
+}},
+  year      = {2002}
+}
+
+% ============================================================================
+% VI. SIZE EFFECT AND MID-CAP ANOMALY
+% ============================================================================
+
+@article{banz1981size,
+  title     = {The Relationship Between Return and Market Value of Common Stocks},
+  author    = {Banz, Rolf W.},
+  journal   = {Journal of Financial Economics},
+  volume    = {9},
+  number    = {1},
+  pages     = {3--18},
+  year      = {1981}
+}
+
+@article{fama1993ff3,
+  title     = {Common Risk Factors in the Returns on Stocks and Bonds},
+  author    = {Fama, Eugene F. and French, Kenneth R.},
+  journal   = {Journal of Financial Economics},
+  volume    = {33},
+  number    = {1},
+  pages     = {3--56},
+  year      = {1993}
+}
+
+@article{hou2020replicating,
+  title     = {Replicating Anomalies},
+  author    = {Hou, Kewei and Xue, Chen and Zhang, Lu},
+  year      = {2017},
+  journal   = {SSRN Electronic Journal},
+  issn      = {1556-5068},
+  doi       = {10.2139/ssrn.2961979},
+  urldate   = {2026-04-20},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 956},
+  file      = {D:\oneDrive\zerotoPapers\Hou 等 - 2017 - Replicating anomalies.pdf}
+}
+
+@article{van2011size,
+  title     = {Is Size Dead? {{A}} Review of the Size Effect in Equity Returns},
+  shorttitle = {Is Size Dead?},
+  author    = {Van Dijk, Mathijs A.},
+  year      = {2011},
+  journal   = {Journal of Banking \& Finance},
+  volume    = {35},
+  number    = {12},
+  pages     = {3263--3274},
+  issn      = {03784266},
+  doi       = {10.1016/j.jbankfin.2011.05.009},
+  urldate   = {2026-04-20},
+  copyright = {https://www.elsevier.com/tdm/userlicense/1.0/},
+  langid    = {english},
+  keywords  = {ccfInfo: Not Found,citationNumber: 234},
+  file      = {D:\oneDrive\zerotoPapers\Van Dijk - 2011 - Is size dead A review of the size effect in equity returns.pdf}
+} year      = {2011}
+}
+
+@inproceedings{he2025shell,
+  title     = {Mitigating Shell Value Contamination in China's A-Share Market: A Two-Factor Strategy Combining Size and Earnings-to-Price Effects},
+  author    = {He, Xinyi},
+  booktitle = {Proceedings of the 5th International Conference on Enterprise Management and Economic Development (ICEMED 2025)},
+  pages     = {533--543},
+  year      = {2025},
+  doi       = {10.2991/978-94-6463-811-0_56}
+}
+
+@article{ahn2021china,
+  title     = {Big Is Brilliant: {{Understanding}} the {{Chinese}} Size Effect through Profitability Shocks},
+  shorttitle = {Big Is Brilliant},
+  author    = {Yin, Libo and Liao, Huiyi},
+  year      = {2021},
+  journal   = {International Review of Financial Analysis},
+  volume    = {74},
+  pages     = {101704},
+  issn      = {1057-5219},
+  doi       = {10.1016/j.irfa.2021.101704},
+  urldate   = {2026-04-20},
+  abstract  = {Taking a dynamic view, this paper assesses the extent to which profitability shocks affect the size premium in the Chinese market. In the short run, there is a significant U-shaped relationship between size and profitability shocks; i.e., both small and large firms experience large and (in most cases) positive profitability shocks, while firms with medium market capitalizations display small profitability shocks. In the long run, profitability shocks in large firms remain large and stable, while profitability shocks in small firms decrease sharply. Adjusting for profitability shocks increases the returns of small firms but decreases the returns of large firms, indicating that large and positive profitability shocks in small firms cannot bring investors sizable returns even though the correlation between profitability shocks and returns is positive. Mismatches between profitability shocks and the per-unit return impact of such shocks (e.g., when firms experience positive shocks but the market reacts to these shocks irrationally) can help explain this phenomenon. Our work reveals that in terms of fundamentals, large firms are very worthy of investment owing to their superb fundamental performance, i.e., large and persistent profitability shocks.},
+  keywords  = {ccfInfo: Net Error: 0,citationNumber: 2,Empirical asset pricing,Expected stock returns,Profitability shocks,Size effect},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Yin和Liao - 2021 - Big is brilliant Understanding the Chinese size effect through profitability shocks.pdf;D\:\\oneDrive\\zetero\\storage\\ZMYSFM8K\\S1057521921000478.html}
+}
+
+% ============================================================================
+% VII. LOCAL REPO PAPERS (Prior Work Baselines)
+% ============================================================================
+
+@misc{arxiv2602quantaalpha,
+  title     = {QuantaAlpha: An Evolutionary Framework for LLM-Driven Alpha Mining},
+  author    = {Han, Jun and Zhang, Shuo and Li, Wei and others},
+  year      = {2026},
+  eprint    = {2602.07085},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2602.07085}
+}
+
+@misc{arxiv2306fingpt,
+  title     = {FinGPT: Open-Source Financial Large Language Models},
+  author    = {Yang, Hongyang and Liu, Xiao-Yang and Wang, Christina Dan},
+  year      = {2026},
+  eprint    = {2306.06031},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2306.06031}
+}
+
+@misc{arxiv2308metagpt,
+  title     = {MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework},
+  author    = {Hong, Sirui and Zhuge, Mingchen and Chen, Jiaqi and others},
+  year      = {2026},
+  eprint    = {2308.00352},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2308.00352}
+}
+
+@misc{arxiv2412tradingagents,
+  title     = {TradingAgents: Multi-Agents LLM Financial Trading Framework},
+  author    = {Xiao, Yijia and Sun, Edward and Luo, Di and Wang, Wei},
+  year      = {2026},
+  eprint    = {2412.20138},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2412.20138}
+}
+
+@misc{arxiv2510quantagents,
+  title     = {QuantAgents: Towards Multi-agent Financial System via Simulated Trading},
+  author    = {Li, Xiangyu and Zeng, Yawen and Xing, Xiaofen and others},
+  year      = {2026},
+  eprint    = {2510.04643},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2510.04643}
+}
+
+@misc{arxiv2311finmem,
+  title     = {FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design},
+  author    = {Yu, Yangyang and Li, Haohang and Chen, Zhi and others},
+  year      = {2026},
+  eprint    = {2311.13743},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  doi       = {10.48550/arXiv.2311.13743}
+}
+
+% ============================================================================
+% VIII. ADDITIONAL RELATED WORK (2025-2026)
+% ============================================================================
+
+@misc{lin2026factorengine,
+  title     = {{{FactorEngine}}: {{A}} Program-Level Knowledge-Infused Factor Mining Framework for Quantitative Investment},
+  shorttitle = {{{FactorEngine}}},
+  author    = {Lin, Qinhong and Feng, Ruitao and Feng, Yinglun and Huang, Zhenxin and Chen, Yukun and Yang, Zhongliang and Zhou, Linna and Fei, Binjie and Liu, Jiaqi and Li, Yu},
+  year      = {2026},
+  number    = {arXiv:2603.16365},
+  eprint    = {2603.16365},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2603.16365},
+  urldate   = {2026-04-20},
+  abstract  = {We study alpha factor mining, the automated discovery of predictive signals from noisy, non-stationary market data-under a practical requirement that mined factors be directly executable and auditable, and that the discovery process remain computationally tractable at scale. Existing symbolic approaches are limited by bounded expressiveness, while neural forecasters often trade interpretability for performance and remain vulnerable to regime shifts and overfitting. We introduce FactorEngine (FE), a program-level factor discovery framework that casts factors as Turing-complete code and improves both effectiveness and efficiency via three separations: (i) logic revision vs. parameter optimization, (ii) LLM-guided directional search vs. Bayesian hyperparameter search, and (iii) LLM usage vs. local computation. FE further incorporates a knowledge-infused bootstrapping module that transforms unstructured financial reports into executable factor programs through a closed-loop multi-agent extraction-verification-code-generation pipeline, and an experience knowledge base that supports trajectory-aware refinement (including learning from failures). Across extensive backtests on real-world OHLCV data, FE produces factors with substantially stronger predictive stability and portfolio impact-for example, higher IC/ICIR (and Rank IC/ICIR) and improved AR/Sharpe, than baseline methods, achieving state-of-the-art predictive and portfolio performance.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: Not Found,citationNumber: 0,Computer Science - Artificial Intelligence},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Lin 等 - 2026 - FactorEngine A program-level knowledge-infused factor mining framework for quantitative investment.pdf;D\:\\oneDrive\\zetero\\storage\\A3PCXLQA\\2603.html}
+}
+
+@misc{guo2026alphaprobe,
+  title     = {{{AlphaPROBE}}: {{Alpha}} Mining via Principled Retrieval and on-Graph Biased Evolution},
+  shorttitle = {{{AlphaPROBE}}},
+  author    = {Guo, Taian and Shen, Haiyang and Luo, Junyu and Chen, Binqi and Ding, Hongjun and Huang, Jinsheng and Liu, Luchen and Ma, Yun and Zhang, Ming},
+  year      = {2026},
+  number    = {arXiv:2602.11917},
+  eprint    = {2602.11917},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi       = {10.48550/arXiv.2602.11917},
+  urldate   = {2026-04-20},
+  abstract  = {Extracting signals through alpha factor mining is a fundamental challenge in quantitative finance. Existing automated methods primarily follow two paradigms: Decoupled Factor Generation, which treats factor discovery as isolated events, and Iterative Factor Evolution, which focuses on local parent-child refinements. However, both paradigms lack a global structural view, often treating factor pools as unstructured collections or fragmented chains, which leads to redundant search and limited diversity. To address these limitations, we introduce AlphaPROBE (Alpha Mining via Principled Retrieval and On-graph Biased Evolution), a framework that reframes alpha mining as the strategic navigation of a Directed Acyclic Graph (DAG). By modeling factors as nodes and evolutionary links as edges, AlphaPROBE treats the factor pool as a dynamic, interconnected ecosystem. The framework consists of two core components: a Bayesian Factor Retriever that identifies high-potential seeds by balancing exploitation and exploration through a posterior probability model, and a DAG-aware Factor Generator that leverages the full ancestral trace of factors to produce context-aware, nonredundant optimizations. Extensive experiments on three major Chinese stock market datasets against 8 competitive baselines demonstrate that AlphaPROBE significantly gains enhanced performance in predictive accuracy, return stability and training efficiency. Our results confirm that leveraging global evolutionary topology is essential for efficient and robust automated alpha discovery. We have open-sourced our implementation at https://github.com/gta0804/AlphaPROBE.},
+  archiveprefix = {arXiv},
+  keywords  = {ccfInfo: CCF-None CORR,citationNumber: 0,Computer Science - Artificial Intelligence},
+  file      = {D\:\\oneDrive\\zerotoPapers\\Guo 等 - 2026 - AlphaPROBE Alpha mining via principled retrieval and on-graph biased evolution.pdf;D\:\\oneDrive\\zetero\\storage\\FHA2P79P\\2602.html}
+}
+
+@article{kang2021crowding,
+  title     = {Crowding and Factor Returns},
+  author    = {Kang, Wenjin and Rouwenhorst, K. Geert and Tang, Ke},
+  journal   = {Journal of Financial Economics},
+  year      = {2021},
+  note      = {Available at SSRN: https://ssrn.com/abstract=3803954}
+}
+
+@article{mclean2016postpub,
+  title     = {Does Academic Research Destroy Stock Return Predictability?},
+  author    = {McLean, R. David and Pontiff, Jeffrey},
+  journal   = {Journal of Finance},
+  volume    = {71},
+  number    = {1},
+  pages     = {5--32},
+  year      = {2016},
+  doi       = {10.1111/jofi.12365}
+}

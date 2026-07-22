@@ -515,3 +515,58 @@ class RelationType(Enum):
     PREDICTS
     AFFECTS
 ```
+## Agent Module API (`kg_quant.agents`)
+
+### Agent Harness
+
+```python
+from kg_quant.agents import AgentHarness, build_default_harness_config
+
+config = build_default_harness_config()
+harness = AgentHarness(config=config)
+harness.start_session()
+harness.register_default_agents()
+```
+
+### Artifact Lifecycle
+
+```python
+from kg_quant.agents import Artifact, AgentRole
+
+a = Artifact(artifact_type="relation", content={"head": "ROE", "tail": "PE"})
+a.add_provenance(AgentRole.GENERATOR, "generated")
+a.quality_scores = {"csc": 0.88}
+```
+
+### Deliberation Protocol
+
+```python
+from kg_quant.agents import DeliberationConfig
+
+dc = DeliberationConfig()
+dc.should_deliberate([0.3, 0.9])  # → True (std > 0.2)
+dc.has_converged([0.75, 0.78])    # → True (std < 0.1)
+```
+
+### Quality Gates
+
+```python
+from kg_quant.agents import QualityGateEnforcer, HarnessConfig
+
+config = HarnessConfig(quality_gates={"csc": True, "eq": True, "sc": True})
+enforcer = QualityGateEnforcer(config)
+passed, reasons = enforcer.check_all(artifact)
+```
+
+### Inter-Agent Agreement
+
+```python
+from kg_quant.agents import compute_inter_agent_agreement
+
+agreement = compute_inter_agent_agreement({
+    "scorer_a": [0.8, 0.7, 0.9],
+    "scorer_b": [0.75, 0.65, 0.85],
+})
+```
+
+See `examples/demo_agent_harness.py` for a complete walkthrough.

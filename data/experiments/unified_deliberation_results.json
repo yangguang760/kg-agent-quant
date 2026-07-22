@@ -1,0 +1,562 @@
+[
+  {
+    "head": "PEG",
+    "tail": "PE",
+    "primary_std": 0.475,
+    "final_std": 0.0,
+    "std_reduction": 0.475,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PE \u56e0\u5b50",
+    "tail": "\u4f4e\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.325,
+    "final_std": 0.025,
+    "std_reduction": 0.3,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PB \u56e0\u5b50",
+    "tail": "\u901a\u80c0\u4e0a\u884c\u671f",
+    "primary_std": 0.325,
+    "final_std": 0.025,
+    "std_reduction": 0.3,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PB \u56e0\u5b50",
+    "tail": "\u4f4e\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.075,
+    "final_std": 0.075,
+    "std_reduction": -0.0,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PE \u56e0\u5b50",
+    "tail": "PE",
+    "primary_std": 0.475,
+    "final_std": 0.0,
+    "std_reduction": 0.475,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e PE \u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "\u9ad8\u80a1\u606f\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PB \u56e0\u5b50",
+    "tail": "\u901a\u80c0\u4e0a\u884c\u671f",
+    "primary_std": 0.175,
+    "final_std": 0.025,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "\u9ad8\u80a1\u606f\u56e0\u5b50",
+    "tail": "Dividend Yield",
+    "primary_std": 0.475,
+    "final_std": 0.0,
+    "std_reduction": 0.475,
+    "converged": true
+  },
+  {
+    "head": "\u76c8\u5229\u7a33\u5b9a\u6027\u56e0\u5b50",
+    "tail": "\u4f4e\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.075,
+    "std_reduction": 0.175,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PB \u56e0\u5b50",
+    "tail": "\u901a\u80c0\u4e0a\u884c\u671f",
+    "primary_std": 0.175,
+    "final_std": 0.025,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "\u7279\u5f02\u5ea6\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "tail": "\u4f4e\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.0,
+    "std_reduction": 0.25,
+    "converged": true
+  },
+  {
+    "head": "\u9ad8 ROE \u56e0\u5b50",
+    "tail": "\u9707\u8361\u5e02",
+    "primary_std": 0.175,
+    "final_std": 0.05,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "\u5206\u6790\u5e08\u9884\u671f\u4e0a\u8c03\u56e0\u5b50",
+    "tail": "\u9707\u8361\u5e02",
+    "primary_std": 0.15,
+    "final_std": 0.075,
+    "std_reduction": 0.075,
+    "converged": true
+  },
+  {
+    "head": "\u4ef7\u683c\u52a8\u91cf\u56e0\u5b50",
+    "tail": "\u4f4e\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.05,
+    "std_reduction": 0.2,
+    "converged": true
+  },
+  {
+    "head": "\u5206\u6790\u5e08\u9884\u671f\u4e0a\u8c03\u56e0\u5b50",
+    "tail": "\u9707\u8361\u5e02",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "Gross Margin",
+    "tail": "Inventory Turnover",
+    "primary_std": 0.1,
+    "final_std": 0.0,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "PE",
+    "tail": "PB",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "PB",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "\u4ef7\u503c\u6295\u8d44",
+    "tail": "PS",
+    "primary_std": 0.475,
+    "final_std": 0.475,
+    "std_reduction": 0.0,
+    "converged": false
+  },
+  {
+    "head": "Total Asset Turnover",
+    "tail": "Gross Margin",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "Receivables Turnover",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.1,
+    "final_std": 0.0,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "ROA",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "ROE",
+    "tail": "Net Margin",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "ROE",
+    "tail": "PE",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Net Margin",
+    "tail": "ROA",
+    "primary_std": 0.15,
+    "final_std": 0.05,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "PS",
+    "tail": "Net Margin",
+    "primary_std": 0.15,
+    "final_std": 0.0,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "PS",
+    "tail": "PB",
+    "primary_std": 0.25,
+    "final_std": 0.1,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "\u4ef7\u503c\u6295\u8d44",
+    "tail": "PS",
+    "primary_std": 0.475,
+    "final_std": 0.4,
+    "std_reduction": 0.075,
+    "converged": false
+  },
+  {
+    "head": "Net Profit Growth",
+    "tail": "PB",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "Revenue Growth",
+    "tail": "PE",
+    "primary_std": 0.075,
+    "final_std": 0.075,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Receivables Turnover",
+    "tail": "Gross Margin",
+    "primary_std": 0.1,
+    "final_std": 0.0,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "Receivables Turnover",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.1,
+    "final_std": 0.0,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u76c8\u4f59\u60ca\u559c\u56e0\u5b50",
+    "primary_std": 0.25,
+    "final_std": 0.125,
+    "std_reduction": 0.125,
+    "converged": false
+  },
+  {
+    "head": "\u9ad8 ROE \u56e0\u5b50",
+    "tail": "\u4f4e\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.325,
+    "final_std": 0.0,
+    "std_reduction": 0.325,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u6760\u6746\u56e0\u5b50",
+    "tail": "Debt-to-Asset",
+    "primary_std": 0.15,
+    "final_std": 0.075,
+    "std_reduction": 0.075,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u6760\u6746\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.325,
+    "final_std": 0.025,
+    "std_reduction": 0.3,
+    "converged": true
+  },
+  {
+    "head": "\u76c8\u5229\u7a33\u5b9a\u6027\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.0,
+    "std_reduction": 0.25,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "\u76c8\u4f59\u60ca\u559c\u56e0\u5b50",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.425,
+    "final_std": 0.0,
+    "std_reduction": 0.425,
+    "converged": true
+  },
+  {
+    "head": "\u9ad8 ROE \u56e0\u5b50",
+    "tail": "\u4f4e\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.15,
+    "final_std": 0.0,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u6760\u6746\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "\u76c8\u5229\u7a33\u5b9a\u6027\u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "\u8d44\u672c\u8d44\u4ea7\u5b9a\u4ef7\u6a21\u578b",
+    "tail": "\u4f4e\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "primary_std": 0.475,
+    "final_std": 0.05,
+    "std_reduction": 0.425,
+    "converged": true
+  },
+  {
+    "head": "Debt-to-Asset",
+    "tail": "Net Profit Growth",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Current Ratio",
+    "tail": "ROA",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Interest Coverage",
+    "tail": "PB",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "PEG",
+    "tail": "Net Margin",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Quick Ratio",
+    "tail": "ROA",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "Interest Coverage",
+    "tail": "Revenue Growth",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "\u8d44\u672c\u8d44\u4ea7\u5b9a\u4ef7\u6a21\u578b",
+    "tail": "\u4f4e\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.05,
+    "std_reduction": 0.1,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u6362\u624b\u7387\u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u5206\u6790\u5e08\u9884\u671f\u4e0a\u8c03\u56e0\u5b50",
+    "primary_std": 0.1,
+    "final_std": 0.025,
+    "std_reduction": 0.075,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u8d1d\u5854\u56e0\u5b50",
+    "primary_std": 0.25,
+    "final_std": 0.225,
+    "std_reduction": 0.025,
+    "converged": false
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.075,
+    "std_reduction": 0.075,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e PB \u56e0\u5b50",
+    "tail": "\u718a\u5e02",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u6362\u624b\u7387\u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.0,
+    "std_reduction": 0.15,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u8d1d\u5854\u56e0\u5b50",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "\u5c0f\u5e02\u503c\u56e0\u5b50",
+    "tail": "\u9ad8\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u8d1d\u5854\u56e0\u5b50",
+    "tail": "\u4f4e\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.075,
+    "std_reduction": 0.175,
+    "converged": true
+  },
+  {
+    "head": "\u4f4e\u8d1d\u5854\u56e0\u5b50",
+    "tail": "\u4f4e\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.075,
+    "final_std": 0.075,
+    "std_reduction": -0.0,
+    "converged": true
+  },
+  {
+    "head": "\u5c0f\u5e02\u503c\u56e0\u5b50",
+    "tail": "\u9ad8\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.05,
+    "std_reduction": 0.2,
+    "converged": true
+  },
+  {
+    "head": "\u5c0f\u5e02\u503c\u56e0\u5b50",
+    "tail": "\u9ad8\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  },
+  {
+    "head": "\u8d44\u91d1\u51c0\u6d41\u5165\u56e0\u5b50",
+    "tail": "\u725b\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.125,
+    "std_reduction": 0.125,
+    "converged": false
+  },
+  {
+    "head": "\u5c0f\u5e02\u503c\u56e0\u5b50",
+    "tail": "\u725b\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.0,
+    "std_reduction": 0.25,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u4f4e\u6362\u624b\u7387\u56e0\u5b50",
+    "primary_std": 0.15,
+    "final_std": 0.025,
+    "std_reduction": 0.125,
+    "converged": true
+  },
+  {
+    "head": "\u6709\u6548\u5e02\u573a\u5047\u8bf4",
+    "tail": "\u5206\u6790\u5e08\u9884\u671f\u4e0a\u8c03\u56e0\u5b50",
+    "primary_std": 0.1,
+    "final_std": 0.1,
+    "std_reduction": 0.0,
+    "converged": true
+  },
+  {
+    "head": "\u8d44\u91d1\u51c0\u6d41\u5165\u56e0\u5b50",
+    "tail": "\u9ad8\u6d41\u52a8\u6027\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.0,
+    "std_reduction": 0.25,
+    "converged": true
+  },
+  {
+    "head": "\u8d44\u91d1\u51c0\u6d41\u5165\u56e0\u5b50",
+    "tail": "\u725b\u5e02",
+    "primary_std": 0.25,
+    "final_std": 0.05,
+    "std_reduction": 0.2,
+    "converged": true
+  },
+  {
+    "head": "\u7279\u5f02\u5ea6\u6ce2\u52a8\u7387\u56e0\u5b50",
+    "tail": "\u9ad8\u6ce2\u52a8\u5e02\u573a",
+    "primary_std": 0.25,
+    "final_std": 0.025,
+    "std_reduction": 0.225,
+    "converged": true
+  }
+]

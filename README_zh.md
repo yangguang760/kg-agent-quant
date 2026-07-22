@@ -2,14 +2,15 @@
 
 <div align="center">
 
-**基于知识图谱与LLM验证的量化因子研究平台**
+**基于知识图谱与多智能体验证的量化因子研究平台**
 
-*使用大语言模型和阶段性独立验证来发现和验证量化alpha因子的多阶段流水线。*
+*使用大语言模型和审议共识协议来发现和验证量化alpha因子的多阶段流水线。*
+
+📄 **论文**: DAI 2026 Industry Track — *"From Topics to Factors: Multi-Agent Verification with Deliberative Consensus"*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
-[![Code Size](https://img.shields.io/badge/code%20size-~3k%20lines-blue.svg)](#)
 
 </div>
 
@@ -17,27 +18,26 @@
 
 ## 概述
 
-KG-AgentQuant 实现了一个新颖的**多阶段LLM辅助量化因子发现流水线**，具有阶段性独立验证机制。通过在每个中间阶段引入质量控制，解决了传统多阶段LLM流水线中的误差传播问题。
+KG-AgentQuant 实现了一个**多智能体验证架构**。当独立的评分器LLM对产物质量存在分歧时，它们不会简单平均（我们发现简单平均在55%的分歧案例中反而降低准确性），而是进入**审议共识协议**——带推理交换的结构化多轮辩论。
 
 ### 核心创新
 
-核心创新是**分离的生成器-评分器架构**和**三个质量控制指标**：
+**阶段性验证 + 审议共识。** 三个验证门（CSC、EQ、SC）各使用**双独立评分器**。分歧时（σ > 0.2），审议而非投票：
 
-| 指标 | 用途 | 描述 |
-|--------|---------|-------------|
-| **CSC** | 共识校准分数 | 评估实体层面的关系可信度 |
-| **EQ** | 解释质量 | 验证假设的一致性和可解释性 |
-| **SC** | 语义一致性 | 确保表达式忠实于假设 |
+| 门 | 检查内容 | 评分器对 | 收敛率 |
+|------|--------|-------------|-------------|
+| **CSC** | 关系可信度 | GLM-5 + Kimi-K2.5 | 93% |
+| **EQ** | 假设一致性 | GLM-5 + DeepSeek-V4-Pro | 91% |
+| **SC** | 因子-假设忠实度 | DeepSeek-V4-Pro × 2 | 50% |
 
-### 架构图
-
-<p align="center">
-  <img src="docs/fig1.jpg" alt="KG-AgentQuant 架构图" width="800"/>
-</p>
+### 架构
 
 ```
-主题 → 实体扩展 → 关系构建 → 假设生成 → 表达式实例化
-              ↓            ↓              ↓              ↓
+主题 → 实体 → [CSC门] → 关系 → [EQ门] → 假设 → [SC门] → 因子 → 组合
+                 │                    │                  │
+            双评分器              双评分器            双评分器
+            一致? → 通过          一致? → 通过        一致? → 通过
+            分歧? → 审议          分歧? → 审议        分歧? → 审议
           (层级1)       (层级2)       (假设)        (因子)
                        [CSC过滤]    [EQ过滤]     [SC过滤]
 ```
@@ -192,31 +192,54 @@ python examples/04_llm_generation.py     # LLM生成
 pytest tests/ -v
 ```
 
+## 多 Agent 验证（新功能）
+
+本包包含论文中描述的 **分布式多 Agent 验证框架**：
+
+```python
+from kg_quant.agents import AgentHarness, build_default_harness_config
+from kg_quant.agents import AgentRole, Artifact
+
+# 创建包含 Generator + CSC/EQ/SC Scorer 的 Agent 拓扑
+config = build_default_harness_config()
+harness = AgentHarness(config=config)
+harness.start_session()
+harness.register_default_agents()
+
+# 将 artifact 路由通过验证
+artifact = Artifact(artifact_type="relation", 
+    content={"head": "ROE", "tail": "PE"}, 
+    reasoning_trace="ROE与PE通过盈利相关联...")
+artifact.add_provenance(AgentRole.GENERATOR, "generated")
+
+# 质量门检查
+passed, reasons = harness.gate_enforcer.check_all(artifact)
+```
+
+详见 `examples/demo_agent_harness.py`。
+
 ## 项目结构
 
 ```
 kg_agent_quant/
-├── src/kg_quant/               # 核心包 (~3200行)
+├── src/kg_quant/               # 核心包 (~5000行)
 │   ├── core/                  # 核心框架
-│   │   ├── config.py          # 配置管理
-│   │   └── evaluator.py       # 统一评估器
 │   ├── kg/                    # 知识图谱模块
-│   │   ├── retriever.py      # KG检索
-│   │   ├── feature_generator.py  # 特征生成
-│   │   ├── expression_evaluator.py  # QLIB表达式
-│   │   ├── explainer.py      # 因子解释
-│   │   ├── schema.py        # KG schema定义
-│   │   └── consistency_checker.py  # 语义检查
+│   ├── agents/                # 多Agent验证（新增）
+│   │   ├── protocol.py       # Agent角色、消息、A2A协议
+│   │   ├── deliberation.py   # 多轮审议共识引擎
+│   │   ├── feedback_loop.py  # Agentic自修正闭环
+│   │   └── harness.py        # Agent注册、消息路由、质量门
 │   ├── llm/                   # LLM生成模块
-│   │   ├── config.py         # LLM配置
-│   │   └── generators.py     # 概念/关系/假设生成器
 │   ├── factor/               # 因子解析
-│   │   └── ast_parser.py     # AST解析器
 │   └── evaluation/           # 评估指标
-│       └── metrics.py        # IC, RankIC, ARR等
+├── examples/                  # 示例脚本
+│   ├── demo_agent_harness.py    # Agent拓扑演示
+│   ├── run_deliberation_live.py # 真实多轮审议实验
+│   ├── run_feedback_loop_live.py # 反馈闭环实验
+│   └── run_heterogeneity_study.py # 异质性研究
 ├── data/
 │   ├── kg/                   # 知识图谱数据
-│   │   ├── layer1_concepts.json    # 64个金融实体
 │   │   └── layer2_relations_final.json  # 856个关系
 │   └── sample/               # 样本数据
 │       └── factors_sample.json  # 10个样本因子

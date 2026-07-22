@@ -36,8 +36,31 @@ from kg_quant.llm import (
     RelationGenerator,
     HypothesisGenerator,
 )
+from kg_quant.agents import (
+    AgentRole,
+    MessageType,
+    AgentMessage,
+    AgentCard,
+    Artifact,
+    ArtifactStatus,
+    DeliberationConfig,
+    DeliberationState,
+    HarnessConfig,
+    DeliberationEngine,
+    DeliberationResult,
+    DeliberationSummary,
+    FeedbackLoopEngine,
+    FeedbackLoopResult,
+    FeedbackLoopSummary,
+    AgentHarness,
+    AgentRegistry,
+    MessageRouter,
+    QualityGateEnforcer,
+    build_default_harness_config,
+    compute_inter_agent_agreement,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     # KG Module
@@ -74,4 +97,26 @@ __all__ = [
     "ConceptGenerator",
     "RelationGenerator",
     "HypothesisGenerator",
+    # Agent Module (DAI 2026)
+    "AgentRole",
+    "MessageType",
+    "AgentMessage",
+    "AgentCard",
+    "Artifact",
+    "ArtifactStatus",
+    "DeliberationConfig",
+    "DeliberationState",
+    "HarnessConfig",
+    "DeliberationEngine",
+    "DeliberationResult",
+    "DeliberationSummary",
+    "FeedbackLoopEngine",
+    "FeedbackLoopResult",
+    "FeedbackLoopSummary",
+    "AgentHarness",
+    "AgentRegistry",
+    "MessageRouter",
+    "QualityGateEnforcer",
+    "build_default_harness_config",
+    "compute_inter_agent_agreement",
 ]

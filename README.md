@@ -2,15 +2,17 @@
 
 <div align="center">
 
-**Knowledge Graph Enhanced Alpha Factor Research with LLM Verification**
+**Knowledge Graph Enhanced Alpha Factor Research with Multi-Agent Verification**
 
-*A multi-stage pipeline for discovering and validating quantitative alpha factors using Large Language Models with stage-wise independent verification.*
+*A multi-stage pipeline for discovering and validating quantitative alpha factors using Large Language Models with stage-wise deliberative consensus.*
 
 [中文文档](README_zh.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/downloads/)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
-[![Code Size](https://img.shields.io/badge/code%20size-~3k%20lines-blue.svg)](#)
+[![Code Size](https://img.shields.io/badge/code%20size-~5k%20lines-blue.svg)](#)
+
+📄 **Paper**: DAI 2026 Industry Track — *"From Topics to Factors: Multi-Agent Verification with Deliberative Consensus"*
 
 </div>
 
@@ -18,29 +20,26 @@
 
 ## Overview
 
-KG-AgentQuant implements a novel **multi-stage LLM-assisted quantitative factor discovery pipeline** with stage-wise independent verification. It addresses error propagation in traditional multi-stage LLM pipelines by introducing quality control at each intermediate stage.
+KG-AgentQuant implements a **multi-agent verification architecture** for LLM-driven factor discovery pipelines. When independent scorer LLMs disagree on artifact quality, rather than simple score averaging (which we show degrades accuracy in 55% of disagreement cases), they engage in a **deliberative consensus protocol** — structured multi-turn debate with reasoning exchange.
 
 ### Key Innovation
 
-The key innovation is **separated Generator-Scorer architecture** and **three quality control metrics**:
+**Stage-wise verification with deliberative consensus.** Three verification gates (CSC, EQ, SC) each employ **dual independent scorer agents**. When scorers disagree (σ > 0.2), they deliberate rather than vote:
 
-| Metric | Purpose | Description |
-|--------|---------|-------------|
-| **CSC** | Consensus Calibration Score | Evaluates relation credibility at entity level |
-| **EQ** | Explanation Quality | Validates hypothesis coherence and interpretability |
-| **SC** | Semantic Consistency | Ensures expression fidelity to hypothesis |
+| Gate | Checks | Scorer Pair | Convergence |
+|------|--------|-------------|-------------|
+| **CSC** | Relation credibility | GLM-5 + Kimi-K2.5 | 93% |
+| **EQ** | Hypothesis coherence | GLM-5 + DeepSeek-V4-Pro | 91% |
+| **SC** | Factor-to-hypothesis fidelity | DeepSeek-V4-Pro × 2 | 50% |
 
 ### Architecture
 
-<p align="center">
-  <img src="docs/fig1.jpg" alt="KG-AgentQuant Architecture" width="800"/>
-</p>
-
 ```
-Topics → Entity Expansion → Relation Construction → Hypothesis Generation → Expression Instantiation
-              ↓                    ↓                      ↓                      ↓
-           (Layer 1)           (Layer 2)              (Hypotheses)          (Factors)
-                               [CSC Filter]          [EQ Filter]           [SC Filter]
+Topics → Entities → [CSC Gate] → Relations → [EQ Gate] → Hypotheses → [SC Gate] → Factors → Portfolio
+                       │                       │                      │
+                  Dual Scorers            Dual Scorers           Dual Scorers
+                  Agree? → PASS           Agree? → PASS          Agree? → PASS
+                  Disagree? → DELIBERATE  Disagree? → DELIBERATE Disagree? → DELIBERATE
 ```
 
 ## Features
@@ -195,11 +194,37 @@ python examples/04_llm_generation.py
 pytest tests/ -v
 ```
 
+## Multi-Agent Verification (New)
+
+The package includes a **distributed multi-agent verification harness** implementing the architecture described in our DAI 2026 paper:
+
+```python
+from kg_quant.agents import AgentHarness, build_default_harness_config
+from kg_quant.agents import AgentRole, Artifact, AgentMessage
+
+# Create harness with Generator + CSC/EQ/SC Scorer agents
+config = build_default_harness_config()
+harness = AgentHarness(config=config)
+harness.start_session()
+harness.register_default_agents()
+
+# Route an artifact through verification
+artifact = Artifact(artifact_type="relation", 
+    content={"head": "ROE", "tail": "PE"}, 
+    reasoning_trace="ROE and PE both relate to earnings...")
+artifact.add_provenance(AgentRole.GENERATOR, "generated")
+
+# Check quality gates
+passed, reasons = harness.gate_enforcer.check_all(artifact)
+```
+
+See `examples/demo_agent_harness.py` for a complete walkthrough.
+
 ## Project Structure
 
 ```
 kg_agent_quant/
-├── src/kg_quant/               # Core package (~3200 lines)
+├── src/kg_quant/               # Core package (~5000 lines)
 │   ├── core/                  # Core framework
 │   │   ├── config.py          # Configuration management
 │   │   └── evaluator.py       # Unified evaluator
@@ -210,6 +235,11 @@ kg_agent_quant/
 │   │   ├── explainer.py      # Factor explanation
 │   │   ├── schema.py         # KG schema definitions
 │   │   └── consistency_checker.py  # Semantic checking
+│   ├── agents/                # Multi-Agent Verification (NEW)
+│   │   ├── protocol.py       # Agent roles, messages, artifacts, A2A-inspired protocol
+│   │   ├── deliberation.py   # Multi-turn deliberative consensus engine
+│   │   ├── feedback_loop.py  # Agentic self-correction loop
+│   │   └── harness.py        # Agent registry, message router, quality gates
 │   ├── llm/                   # LLM Generation module
 │   │   ├── config.py         # LLM configuration
 │   │   └── generators.py     # Concept/Relation/Hypothesis generators
@@ -217,6 +247,11 @@ kg_agent_quant/
 │   │   └── ast_parser.py     # AST-based parser
 │   └── evaluation/           # Evaluation metrics
 │       └── metrics.py        # IC, RankIC, ARR, etc.
+├── examples/                  # Example scripts
+│   ├── demo_agent_harness.py    # Full agent topology demo
+│   ├── run_deliberation_live.py # Real multi-turn deliberation
+│   ├── run_feedback_loop_live.py # Agentic feedback loop
+│   └── run_heterogeneity_study.py # 5-model heterogeneity study
 ├── data/
 │   ├── kg/                   # Knowledge Graph data
 │   │   ├── layer1_concepts.json    # 64 financial entities
