@@ -4,7 +4,7 @@
 
 KG-AgentQuant implements a **multi-agent verification architecture** for LLM-driven factor discovery pipelines. The core innovation is **deliberative consensus**: when independent scorer agents disagree on the quality of an intermediate artifact, they engage in structured multi-turn debate with reasoning exchange — rather than defaulting to simple score averaging.
 
-The system is described in our DAI 2026 Industry Track paper: *"From Topics to Factors: Multi-Agent Verification with Deliberative Consensus."*
+The system implements a multi-agent verification architecture with deliberative consensus for LLM pipelines.
 
 ## Pipeline Architecture
 

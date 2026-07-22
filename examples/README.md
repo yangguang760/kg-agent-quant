@@ -11,9 +11,9 @@
 | `run_feedback_loop_live.py` | Agentic feedback loop experiment | Yes |
 | `run_heterogeneity_study.py` | 5-model heterogeneity study | Yes |
 
-## Paper Experiments
+## Experiment Data
 
-The `data/experiments/` directory contains key result JSONs from the DAI 2026 paper:
+The `data/experiments/` directory contains key result JSONs:
 - `unified_deliberation_results.json` — CSC deliberation (70 relations, 93% convergence)
 - `heterogeneity_study.json` — 5-model pairwise Spearman matrix
 - `human_scores_70.json` — 70-relation human evaluation data

@@ -12,8 +12,6 @@
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
 [![Code Size](https://img.shields.io/badge/code%20size-~5k%20lines-blue.svg)](#)
 
-📄 **Paper**: DAI 2026 Industry Track — *"From Topics to Factors: Multi-Agent Verification with Deliberative Consensus"*
-
 </div>
 
 ---
@@ -33,6 +31,10 @@ KG-AgentQuant implements a **multi-agent verification architecture** for LLM-dri
 | **SC** | Factor-to-hypothesis fidelity | DeepSeek-V4-Pro × 2 | 50% |
 
 ### Architecture
+
+<p align="center">
+  <img src="docs/fig1.jpg" alt="KG-AgentQuant Architecture" width="800"/>
+</p>
 
 ```
 Topics → Entities → [CSC Gate] → Relations → [EQ Gate] → Hypotheses → [SC Gate] → Factors → Portfolio
@@ -196,7 +198,7 @@ pytest tests/ -v
 
 ## Multi-Agent Verification (New)
 
-The package includes a **distributed multi-agent verification harness** implementing the architecture described in our DAI 2026 paper:
+The package includes a **distributed multi-agent verification harness**:
 
 ```python
 from kg_quant.agents import AgentHarness, build_default_harness_config

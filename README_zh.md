@@ -6,8 +6,6 @@
 
 *使用大语言模型和审议共识协议来发现和验证量化alpha因子的多阶段流水线。*
 
-📄 **论文**: DAI 2026 Industry Track — *"From Topics to Factors: Multi-Agent Verification with Deliberative Consensus"*
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
@@ -194,7 +192,7 @@ pytest tests/ -v
 
 ## 多 Agent 验证（新功能）
 
-本包包含论文中描述的 **分布式多 Agent 验证框架**：
+本包包含 **分布式多 Agent 验证框架**：
 
 ```python
 from kg_quant.agents import AgentHarness, build_default_harness_config
