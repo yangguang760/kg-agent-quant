@@ -26,6 +26,7 @@ from __future__ import annotations
 import json
 import time
 import sys
+from copy import deepcopy
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass, field
 from datetime import datetime
@@ -263,11 +264,12 @@ class DeliberationEngine:
 
         current_scores = dict(primary_confidence_scores)
         current_std = primary_std
+        current_model_scores = deepcopy(primary_scores)  # evolves with each round
 
         for round_idx in range(1, self.config.max_rounds + 1):
-            # Build peer review context
+            # Build peer review context from current round scores (not always primary)
             peer_review_str = _build_peer_review_section(
-                primary_scores, relation_idx
+                current_model_scores, relation_idx
             )
 
             # Build deliberation prompt
@@ -340,6 +342,16 @@ class DeliberationEngine:
 
             current_scores = round_scores
             current_std = new_std
+
+            # Update current model scores for next round's peer review
+            for model_name in round_scores:
+                if model_name in current_model_scores and relation_idx < len(current_model_scores[model_name]):
+                    current_model_scores[model_name][relation_idx] = {
+                        "existence_score": round_scores[model_name],
+                        "logic_score": round_scores[model_name],
+                        "confidence_score": round_scores[model_name],
+                        "comments": round_statements.get(model_name, ""),
+                    }
 
             # Check convergence
             if self.config.has_converged(list(round_scores.values())):

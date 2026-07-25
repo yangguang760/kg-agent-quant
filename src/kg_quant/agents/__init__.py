@@ -22,6 +22,8 @@ from kg_quant.agents.protocol import (
     DeliberationConfig,
     DeliberationState,
     HarnessConfig,
+    ScorerCalibration,
+    ScorerCalibrator,
     build_default_harness_config,
     compute_inter_agent_agreement,
 )
@@ -54,6 +56,8 @@ __all__ = [
     "DeliberationConfig",
     "DeliberationState",
     "HarnessConfig",
+    "ScorerCalibration",
+    "ScorerCalibrator",
     "build_default_harness_config",
     "compute_inter_agent_agreement",
     # Deliberation

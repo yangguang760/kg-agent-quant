@@ -446,6 +446,9 @@ class HarnessConfig:
     quality_gates: Dict[str, bool] = field(default_factory=lambda: {
         "csc": True, "eq": True, "sc": True,
     })
+    gate_thresholds: Dict[str, float] = field(default_factory=lambda: {
+        "csc": 0.8, "eq": 0.75, "sc": 0.8,
+    })
 
     def is_gate_active(self, gate: str) -> bool:
         return self.quality_gates.get(gate, False)
@@ -582,17 +585,25 @@ def _krippendorff_alpha_approx(scorer_scores: Dict[str, List[float]]) -> float:
 def build_default_harness_config(
     generator_model: str = "qwen3_5_plus",
     generator_provider: str = "ali",
-    scorer_models: Tuple[str, str] = ("glm_5", "minimax_m2_5"),
-    scorer_provider: str = "31313",
+    scorer_models: Tuple[str, str, str] = ("qwen3_7_max", "kimi_k2_7", "qwen3_7_max"),
+    scorer_provider: str = "ali",
+    gate_thresholds: Optional[Dict[str, float]] = None,
 ) -> HarnessConfig:
     """Build a default harness configuration for the verification topology.
 
+    Defaults reflect the calibration-first methodology: heterogeneous
+    well-calibrated scorers (Qwen + Kimi per our heterogeneity study). SC
+    uses a separate instance to avoid homogeneous echo chambers.
+
     Returns a HarnessConfig with:
       - One Generator agent (Qwen by default)
-      - Two Scorer agents per verification gate (GLM + Kimi by default)
-      - Three verification gates (CSC, EQ, SC) all active
+      - Heterogeneous scorers per gate (Qwen + Kimi by default)
+      - Three verification gates (CSC, EQ, SC) with configurable thresholds
       - Default deliberation parameters
     """
+    if gate_thresholds is None:
+        gate_thresholds = {"csc": 0.8, "eq": 0.75, "sc": 0.8}
+
     scorer_config_template = {
         "provider": scorer_provider,
         "temperature": 0.3,
@@ -603,7 +614,7 @@ def build_default_harness_config(
         generator_config={
             "provider": generator_provider,
             "model_name": generator_model,
-            "temperature": 0.7,            # Higher temp for creative generation
+            "temperature": 0.7,
             "max_tokens": 8000,
         },
         scorer_configs={
@@ -621,7 +632,8 @@ def build_default_harness_config(
             },
             AgentRole.SC_SCORER: {
                 **scorer_config_template,
-                "model_name": scorer_models[0],  # Reuse model for SC
+                "model_name": scorer_models[2],  # Separate instance → heterogeneous
+                "temperature": 0.35,              # Slightly different temp for diversity
                 "verification_dimension": "factor_fidelity",
                 "rubric": ["semantic_alignment", "formula_correctness", "rationale_match"],
             },
@@ -629,4 +641,81 @@ def build_default_harness_config(
         deliberation=DeliberationConfig(),
         max_revision_rounds=3,
         quality_gates={"csc": True, "eq": True, "sc": True},
+        gate_thresholds=gate_thresholds,
     )
+
+
+@dataclass
+class ScorerCalibration:
+    """Result of calibrating a scorer model against human labels."""
+    model_name: str
+    spearman_r: float
+    mae: float
+    n_samples: int
+    rank: int = 0
+
+
+class ScorerCalibrator:
+    """Calibration-first scorer selection (per paper methodology).
+
+    Evaluates candidate scorer models against human-labeled examples,
+    computes Spearman correlation and MAE, and recommends the best
+    heterogeneous pair for deployment.
+
+    Usage:
+        calibrator = ScorerCalibrator(llm_caller)
+        results = calibrator.calibrate(
+            scorer_models=["qwen3_7_max", "kimi_k2_7", "glm_5_2", "ds_v4_pro"],
+            human_examples=[...],  # list of {"artifact": ..., "human_score": 0.7}
+        )
+        best_pair = calibrator.recommend_pair(results)
+        # → ("qwen3_7_max", "kimi_k2_7")
+    """
+
+    def __init__(self, llm_caller: Callable):
+        """Args: llm_caller — function(model_name, prompt) → float (0-1 score)"""
+        self._caller = llm_caller
+
+    def calibrate(self, scorer_models: List[str],
+                  human_examples: List[Dict[str, Any]],
+                  prompt_template: str = "Score this artifact (0-1): {artifact}") -> List[ScorerCalibration]:
+        """Score human examples with each model, compute alignment metrics."""
+        import numpy as np
+        from scipy.stats import spearmanr
+
+        human_scores = [ex["human_score"] for ex in human_examples]
+        artifacts = [ex["artifact"] for ex in human_examples]
+        results = []
+
+        for model in scorer_models:
+            model_scores = []
+            for artifact in artifacts:
+                prompt = prompt_template.format(artifact=artifact)
+                score = self._caller(model, prompt)
+                model_scores.append(float(score))
+
+            r_val, _ = spearmanr(model_scores, human_scores)
+            r = 0.0 if np.isnan(r_val) else float(r_val)
+            mae = float(np.mean(np.abs(np.array(model_scores) - np.array(human_scores))))
+
+            results.append(ScorerCalibration(
+                model_name=model, spearman_r=round(r, 3),
+                mae=round(mae, 4), n_samples=len(human_examples),
+            ))
+
+        # Rank by Spearman r (descending)
+        ranked = sorted(results, key=lambda x: x.spearman_r, reverse=True)
+        for i, r in enumerate(ranked):
+            r.rank = i + 1
+
+        return ranked
+
+    def recommend_pair(self, calibrations: List[ScorerCalibration],
+                       min_r: float = 0.6) -> Tuple[str, str]:
+        """Recommend the best heterogeneous pair: top two models with r > min_r."""
+        qualified = [c for c in calibrations if c.spearman_r > min_r]
+        if len(qualified) < 2:
+            top_two = sorted(calibrations, key=lambda x: x.spearman_r, reverse=True)[:2]
+        else:
+            top_two = sorted(qualified, key=lambda x: x.spearman_r, reverse=True)[:2]
+        return (top_two[0].model_name, top_two[1].model_name)

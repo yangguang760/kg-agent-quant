@@ -10,7 +10,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-green.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-34%20passed-brightgreen.svg)](#)
-[![Code Size](https://img.shields.io/badge/code%20size-~5k%20lines-blue.svg)](#)
+[![Code Size](https://img.shields.io/badge/code%20size-~2k%20lines-blue.svg)](#)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## Overview
 
-KG-AgentQuant implements a **multi-agent verification architecture** for LLM-driven factor discovery pipelines. When independent scorer LLMs disagree on artifact quality, rather than simple score averaging (which we show degrades accuracy in 55% of disagreement cases), they engage in a **deliberative consensus protocol** — structured multi-turn debate with reasoning exchange.
+KG-AgentQuant implements a **multi-agent verification architecture** for LLM-driven factor discovery pipelines. When independent scorer LLMs disagree on artifact quality, rather than simple score averaging (which we show degrades accuracy in 54% of disagreement cases), they engage in a **deliberative consensus protocol** — structured multi-turn debate with reasoning exchange.
 
 ### Key Innovation
 
@@ -226,7 +226,7 @@ See `examples/demo_agent_harness.py` for a complete walkthrough.
 
 ```
 kg_agent_quant/
-├── src/kg_quant/               # Core package (~5000 lines)
+├── src/kg_quant/               # Core package (~2000 lines)
 │   ├── core/                  # Core framework
 │   │   ├── config.py          # Configuration management
 │   │   └── evaluator.py       # Unified evaluator
